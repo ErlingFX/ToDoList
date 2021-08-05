@@ -8,22 +8,20 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    //MARK: - IBoutlet
+    
+    @IBOutlet weak var detailTaskLabel: UILabel!
+    
+    var presenter: DetailViewPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter.setTaskTest()
     }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension DetailViewController: DetailViewProtocol {
+    func setTask(task: Task?) {
+        detailTaskLabel.text = task?.firstName
+    } 
 }

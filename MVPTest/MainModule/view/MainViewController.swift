@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableView()
+        setupBarButton()
         
     }
     //MARK: - barButton
@@ -25,9 +26,9 @@ class MainViewController: UIViewController {
     
     @objc private func onTapBarButton() {
         //ПИЛИТЬ СЮДА ПЕРЕХОД
-        let task = presenter.tasks
-        let detailViewController = ModuleBuilder.createDetailModule(task: task)
-        navigationController?.pushViewController(detailViewController, animated: true)
+//        let task = presenter.tasks
+//        let detailViewController = ModuleBuilder.createDetailModule(task: task)
+//        navigationController?.pushViewController(detailViewController, animated: true)
     }
     
     //MARK: - register TableView function
