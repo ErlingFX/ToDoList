@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
     //MARK: - selector func barButton
     @objc private func onTapBarButton() {
         self.presenter.didTapPlusButton()
-//        navigationController?.pushViewController(eventViewController, animated: true)
     }
     
     //MARK: - register TableView function

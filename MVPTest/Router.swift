@@ -16,8 +16,6 @@ protocol RouterProtocol: RouterMain {
     func initialViewController()
     func showEventModule()
     func createDetailModule(task: Task)
-//    func popToRoot()
-    
 }
 
 class Router: RouterProtocol {
@@ -49,12 +47,6 @@ class Router: RouterProtocol {
             navigationController.pushViewController(detailViewController, animated: true)
         }
     }
-    
-//    func popToRoot() {
-//        if let navigationController = navigationController {
-//            navigationController.popToRootViewController(animated: true)
-//        }
-//    }
 }
 
 //TO-DO вынести в отдельный класс каждый роутер
