@@ -17,18 +17,19 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         registerTableView()
         setupBarButton()
-        
     }
     //MARK: - barButton
     private func setupBarButton() {
-        navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: nil, style: .plain, target: self, action: #selector(onTapBarButton))
+        let myButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapBarButton))
+        
+        navigationItem.rightBarButtonItem = myButton
     }
     
+    //MARK: - selector func barButton
     @objc private func onTapBarButton() {
-        //ПИЛИТЬ СЮДА ПЕРЕХОД
-//        let task = presenter.tasks
-//        let detailViewController = ModuleBuilder.createDetailModule(task: task)
-//        navigationController?.pushViewController(detailViewController, animated: true)
+        let eventViewController = EventViewController()
+        self.presenter.didTapPlusButton()
+        navigationController?.pushViewController(eventViewController, animated: true)
     }
     
     //MARK: - register TableView function
@@ -36,34 +37,33 @@ class MainViewController: UIViewController {
         maintableView.register(UINib(nibName: "TaskCell", bundle: nil), forCellReuseIdentifier: "TaskCell")
     }
 }
+
 //MARK: - data source
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return presenter.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = maintableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as? TaskCell {
-            cell.textLabel?.text = "test"
+            let model = presenter.dataSource[indexPath.row]
+            cell.configureCell(task: model)
             return cell
         }
         return UITableViewCell()
     }
 }
-//MARK: - extension presenterView
-
-extension MainViewController: MainViewProtocol {
-    func setGreeting(greeting: String) {
-        
-    }
-}
-
 //MARK: - delegate
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let task = presenter.tasks?[indexPath.row]
+        let task = presenter.dataSource[indexPath.row]
         let detailViewController = ModuleBuilder.createDetailModule(task: task)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
+}
+//MARK: - extension presenterView
+
+extension MainViewController: MainViewProtocol {
+    
 }
 

@@ -8,6 +8,6 @@
 import Foundation
 
 struct Task {
-    let firstName: String
-    let lastName: String
+    var nameEvent: String
+    var createdDateEvent = Date(timeIntervalSince1970: 1)
 }

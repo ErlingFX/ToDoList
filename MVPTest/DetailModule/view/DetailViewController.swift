@@ -22,6 +22,6 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: DetailViewProtocol {
     func setTask(task: Task?) {
-        detailTaskLabel.text = task?.firstName
+        detailTaskLabel.text = task?.nameEvent
     } 
 }

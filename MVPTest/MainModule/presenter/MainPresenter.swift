@@ -8,22 +8,29 @@
 import Foundation
 
 protocol MainViewProtocol: class {
-    
-    //    func setGreeting(greeting: String)
+   
 }
 
 protocol MainViewPresenterProtocol: class {
     //TO-DO добавить базу данных в инициалазтор
-    init(view: MainViewProtocol)
-    var tasks: [Task]? { get set }
-    //    func showGreeeting()
+    var router: ModuleBuilder! { get set }
+    var dataSource: [Task] { get }
+    func didTapPlusButton()
 }
 
 class MainPresenter: MainViewPresenterProtocol {
+    var dataSource: [Task] = [Task(nameEvent: "Купить молоко")]
+    var router: ModuleBuilder!
     weak var view: MainViewProtocol?
-    var tasks: [Task]?
+//    var view: MainViewProtocol
     
     required init(view: MainViewProtocol) {
         self.view = view
+    }
+    
+    func didTapPlusButton() {
+        ModuleBuilder.createEventModule()
+        
+        
     }
 }

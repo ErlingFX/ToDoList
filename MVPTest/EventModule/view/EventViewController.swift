@@ -12,6 +12,7 @@ class EventViewController: UIViewController {
     //MARK: - IBOtlet
     @IBOutlet weak var insertTextEvent: UITextField!
     
+    var presenter: EventViewPresenterProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,5 +20,10 @@ class EventViewController: UIViewController {
     }
     //MARK: - IBAction
     @IBAction func saveEventButton(_ sender: Any) {
+//        insertTextEvent.text?.append(contentsOf: presenter.dataSource)
     }
 }
+    //MARK: - extension presenterView
+    extension EventViewController: EventViewProtocol {
+    }
+

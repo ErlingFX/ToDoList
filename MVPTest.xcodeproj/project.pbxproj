@@ -15,6 +15,7 @@
 		3517132C26BC2F0500703299 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517132A26BC2F0500703299 /* EventViewController.swift */; };
 		3517132D26BC2F0500703299 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3517132B26BC2F0500703299 /* EventViewController.xib */; };
 		3517134726BC2F6F00703299 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517134626BC2F6F00703299 /* EventPresenter.swift */; };
+		3517135B26BD43DF00703299 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517135A26BD43DF00703299 /* Date.swift */; };
 		3558900A26BAE6F600CFBDA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3558900926BAE6F600CFBDA8 /* AppDelegate.swift */; };
 		3558900C26BAE6F600CFBDA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3558900B26BAE6F600CFBDA8 /* SceneDelegate.swift */; };
 		3558900E26BAE6F600CFBDA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3558900D26BAE6F600CFBDA8 /* MainViewController.swift */; };
@@ -55,6 +56,7 @@
 		3517132A26BC2F0500703299 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		3517132B26BC2F0500703299 /* EventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
 		3517134626BC2F6F00703299 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		3517135A26BD43DF00703299 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		3558900626BAE6F600CFBDA8 /* MVPTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3558900926BAE6F600CFBDA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3558900B26BAE6F600CFBDA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 			path = presenter;
 			sourceTree = "<group>";
 		};
+		3517136226BD43EB00703299 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3517135A26BD43DF00703299 /* Date.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		35588FFD26BAE6F600CFBDA8 = {
 			isa = PBXGroup;
 			children = (
@@ -197,10 +207,11 @@
 				3558900B26BAE6F600CFBDA8 /* SceneDelegate.swift */,
 				3558905E26BAEB6B00CFBDA8 /* ModuleBuilder.swift */,
 				3558904926BAEA9300CFBDA8 /* MainModule */,
-				3517131826BC227B00703299 /* DetailModule */,
 				3517133126BC2F0A00703299 /* EventModule */,
+				3517131826BC227B00703299 /* DetailModule */,
 				3517130126BC143100703299 /* cells */,
 				3517130826BC144300703299 /* storyboards */,
+				3517136226BD43EB00703299 /* Extension */,
 				3558901226BAE6F700CFBDA8 /* Assets.xcassets */,
 				3558901726BAE6F700CFBDA8 /* Info.plist */,
 			);
@@ -395,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3517131E26BC22B500703299 /* DetailViewController.swift in Sources */,
+				3517135B26BD43DF00703299 /* Date.swift in Sources */,
 				3558904226BAE73500CFBDA8 /* MainPresenter.swift in Sources */,
 				351712FC26BC142E00703299 /* TaskCell.swift in Sources */,
 				3558900E26BAE6F600CFBDA8 /* MainViewController.swift in Sources */,

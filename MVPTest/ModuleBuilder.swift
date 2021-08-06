@@ -10,13 +10,21 @@ import UIKit
 protocol Builder {
     static func createMainModule() -> UIViewController
     static func createDetailModule(task: Task?) -> UIViewController
+    static func createEventModule() -> UIViewController
 }
 
 class ModuleBuilder: Builder {
-   
+    
     static func createMainModule() -> UIViewController {
         let view = MainViewController()
         let presenter = MainPresenter(view: view)
+        view.presenter = presenter
+        return view
+    }
+    
+    static func createEventModule() -> UIViewController {
+        let view = EventViewController()
+        let presenter = EventPresenter(view: view)
         view.presenter = presenter
         return view
     }
@@ -27,4 +35,6 @@ class ModuleBuilder: Builder {
         view.presenter = presenter
         return view
     }
+    
+    
 }
