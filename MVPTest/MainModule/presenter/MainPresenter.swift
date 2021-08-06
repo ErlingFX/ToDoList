@@ -19,12 +19,9 @@ protocol MainViewPresenterProtocol: class {
 }
 
 class MainPresenter: MainViewPresenterProtocol {
-    
-    
     weak var view: MainViewProtocol?
     var dataSource: [Task] = [Task(nameEvent: "Купить молоко")]
     var router: RouterProtocol?
-    
     
     required init(view: MainViewProtocol, router: RouterProtocol) {
         self.view = view
@@ -36,6 +33,6 @@ class MainPresenter: MainViewPresenterProtocol {
     }
     
     func beginDetail(task: Task) {
-        router?.createDetailModule()
+        router?.createDetailModule(task: task)
     }
 }

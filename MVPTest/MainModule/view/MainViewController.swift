@@ -57,12 +57,9 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let task = presenter.dataSource[indexPath.row]
         presenter.beginDetail(task: task)
-//        let detailViewController = AssamblyModuleBuilder.createDetailModule(task: task)
-//        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 //MARK: - extension presenterView
-
 extension MainViewController: MainViewProtocol {
     
 }

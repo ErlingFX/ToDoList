@@ -15,8 +15,8 @@ protocol RouterMain {
 protocol RouterProtocol: RouterMain {
     func initialViewController()
     func showEventModule()
-    func createDetailModule()
-    func popToRoot()
+    func createDetailModule(task: Task)
+//    func popToRoot()
     
 }
 
@@ -43,16 +43,18 @@ class Router: RouterProtocol {
         }
     }
     
-    func createDetailModule() {
+    func createDetailModule(task: Task) {
         if let navigationController = navigationController {
-            guard let detailViewController = assamblyBuilder?.createDetailModule(task: nil, router: self) else { return }
+            guard let detailViewController = assamblyBuilder?.createDetailModule(task: task, router: self) else { return }
             navigationController.pushViewController(detailViewController, animated: true)
         }
     }
     
-    func popToRoot() {
-        if let navigationController = navigationController {
-            navigationController.popToRootViewController(animated: true)
-        }
-    }
+//    func popToRoot() {
+//        if let navigationController = navigationController {
+//            navigationController.popToRootViewController(animated: true)
+//        }
+//    }
 }
+
+//TO-DO вынести в отдельный класс каждый роутер

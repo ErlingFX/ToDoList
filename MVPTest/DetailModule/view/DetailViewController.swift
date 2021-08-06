@@ -11,6 +11,7 @@ class DetailViewController: UIViewController {
     //MARK: - IBoutlet
     
     @IBOutlet weak var detailTaskLabel: UILabel!
+    @IBOutlet weak var detailDateLabel: UILabel!
     
     var presenter: DetailViewPresenterProtocol!
     
@@ -22,6 +23,6 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: DetailViewProtocol {
     func setTask(task: Task?) {
-        detailTaskLabel.text = task?.nameEvent
+        detailTaskLabel.text = task?.nameEvent   
     }
 }
