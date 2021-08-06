@@ -13,6 +13,7 @@ protocol EventViewProtocol: class {
 
 protocol EventViewPresenterProtocol: class {
     var router: AssamblyModuleBuilder! { get set }
+    var task: Task? { get set }
     func saveEvent()
 }
 

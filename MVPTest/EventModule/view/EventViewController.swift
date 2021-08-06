@@ -20,8 +20,7 @@ class EventViewController: UIViewController {
     }
     //MARK: - IBAction
     @IBAction func saveEventButton(_ sender: Any) {
-        //        insertTextEvent.text?.append(contentsOf: presenter.dataSource)
-        //
+        insertTextEvent.text?.append(contentsOf: presenter.task?.nameEvent ?? "lol")
     }
 }
 //MARK: - extension presenterView
