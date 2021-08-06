@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol Builder {
+protocol AssamblyBuilderProtocol {
     static func createMainModule() -> UIViewController
     static func createDetailModule(task: Task?) -> UIViewController
     static func createEventModule() -> UIViewController
 }
 
-class ModuleBuilder: Builder {
+class AssamblyModuleBuilder: AssamblyBuilderProtocol {
     
     static func createMainModule() -> UIViewController {
         let view = MainViewController()
