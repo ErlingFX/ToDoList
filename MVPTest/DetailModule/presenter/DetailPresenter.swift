@@ -28,5 +28,4 @@ class DetailPresenter: DetailViewPresenterProtocol {
     public func setTaskTest() {
         self.view?.setTask(task: task)
     }
-    
 }

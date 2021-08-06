@@ -27,9 +27,8 @@ class MainViewController: UIViewController {
     
     //MARK: - selector func barButton
     @objc private func onTapBarButton() {
-        let eventViewController = EventViewController()
         self.presenter.didTapPlusButton()
-        navigationController?.pushViewController(eventViewController, animated: true)
+//        navigationController?.pushViewController(eventViewController, animated: true)
     }
     
     //MARK: - register TableView function
@@ -57,8 +56,9 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let task = presenter.dataSource[indexPath.row]
-        let detailViewController = ModuleBuilder.createDetailModule(task: task)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        presenter.beginDetail(task: task)
+//        let detailViewController = AssamblyModuleBuilder.createDetailModule(task: task)
+//        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 //MARK: - extension presenterView
