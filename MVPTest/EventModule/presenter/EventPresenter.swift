@@ -8,18 +8,18 @@
 import Foundation
 
 protocol EventViewProtocol: class {
-    func saveEvent(task: Task?)
+    func saveEvent(text: String)
 }
 
 protocol EventViewPresenterProtocol: class {
-    var router: AssamblyModuleBuilder! { get set }
+    var router: AddEventRouterProtocol? { get set }
     var task: Task? { get set }
-    func saveEvent()
+    func saveEvent(text: String)
 }
 
 class EventPresenter: EventViewPresenterProtocol {
     var task: Task?
-    var router: AssamblyModuleBuilder!
+    var router: AddEventRouterProtocol?
     weak var view: EventViewProtocol?
     
     required init(view: EventViewProtocol, task: Task?) {
@@ -27,7 +27,8 @@ class EventPresenter: EventViewPresenterProtocol {
         self.task = task
     }
     
-    func saveEvent() {
-        self.view?.saveEvent(task: task)
+    func saveEvent(text: String) {
+        let task = Task.init(nameEvent: text)
+        DataBase.shared.addArrayOfEvent(addTask: task)
     }
 }

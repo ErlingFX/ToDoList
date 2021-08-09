@@ -7,14 +7,17 @@
 
 import Foundation
 
+
 class DataBase {
     static var shared = DataBase()
-    private var arrayOfEvents: [Task] = []
+     var arrayOfEvents: [Task] = []
     
+
     func getArrayOfEvent() -> [Task] {
         return arrayOfEvents
     }
     func addArrayOfEvent(addTask: Task) {
         arrayOfEvents.append(addTask)
+        print(arrayOfEvents)
     }
 }

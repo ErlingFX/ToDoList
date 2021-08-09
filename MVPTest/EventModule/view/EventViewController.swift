@@ -20,13 +20,16 @@ class EventViewController: UIViewController {
     }
     //MARK: - IBAction
     @IBAction func saveEventButton(_ sender: Any) {
-        insertTextEvent.text?.append(contentsOf: presenter.task?.nameEvent ?? "lol")
+        guard let textEvent = insertTextEvent.text else { return }
+        print(textEvent)
+        presenter.saveEvent(text: textEvent)
+        presenter.router?.pop()
     }
 }
 //MARK: - extension presenterView
 extension EventViewController: EventViewProtocol {
-    func saveEvent(task: Task?) {
-        insertTextEvent.text = task?.nameEvent
+    func saveEvent(text: String) {
+        
     }
 }
 

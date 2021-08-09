@@ -18,10 +18,14 @@ class MainViewController: UIViewController {
         registerTableView()
         setupBarButton()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        obtainData()
+    }
     //MARK: - barButton
     private func setupBarButton() {
         let myButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapBarButton))
-        
         navigationItem.rightBarButtonItem = myButton
     }
     
@@ -60,6 +64,9 @@ extension MainViewController: UITableViewDelegate {
 }
 //MARK: - extension presenterView
 extension MainViewController: MainViewProtocol {
-    
+    func obtainData() {
+        presenter.dataSource = DataBase.shared.getArrayOfEvent()
+        maintableView.reloadData()
+    }
 }
 

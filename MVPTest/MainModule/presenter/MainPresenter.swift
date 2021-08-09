@@ -8,22 +8,22 @@
 import Foundation
 
 protocol MainViewProtocol: class {
-    
+    func obtainData()
 }
 
 protocol MainViewPresenterProtocol: class {
     var dataSource: [Task] { get set }
     func didTapPlusButton()
     func beginDetail(task: Task)
-    init(view: MainViewProtocol, router: RouterProtocol)
+    init(view: MainViewProtocol, router: MainRouterProtocol)
 }
 
 class MainPresenter: MainViewPresenterProtocol {
     weak var view: MainViewProtocol?
-    var dataSource: [Task] = [Task(nameEvent: "Купить молоко")]
-    var router: RouterProtocol?
+    var dataSource: [Task] = []
+    var router: MainRouterProtocol?
     
-    required init(view: MainViewProtocol, router: RouterProtocol) {
+    required init(view: MainViewProtocol, router: MainRouterProtocol) {
         self.view = view
         self.router = router
     }
