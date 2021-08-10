@@ -12,7 +12,7 @@ extension DateFormatter {
     static let created: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
-        formatter.dateStyle = .short
+        formatter.dateStyle = .medium
         return formatter
     }()
 }

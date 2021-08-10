@@ -263,7 +263,6 @@
 				3558904926BAEA9300CFBDA8 /* MainModule */,
 				3517133126BC2F0A00703299 /* EventModule */,
 				3517131826BC227B00703299 /* DetailModule */,
-				3517130126BC143100703299 /* cells */,
 				3517130826BC144300703299 /* storyboards */,
 				3517136226BD43EB00703299 /* Extension */,
 				3558901226BAE6F700CFBDA8 /* Assets.xcassets */,
@@ -322,6 +321,7 @@
 			children = (
 				3558900D26BAE6F600CFBDA8 /* MainViewController.swift */,
 				3558905926BAEAD900CFBDA8 /* MainViewController.xib */,
+				3517130126BC143100703299 /* cells */,
 			);
 			path = view;
 			sourceTree = "<group>";

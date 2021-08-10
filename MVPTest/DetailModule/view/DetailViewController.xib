@@ -19,6 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backGroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="dKT-Nv-q21">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-DZ-kV2">
                     <rect key="frame" x="20" y="94" width="374" height="148"/>
                     <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="30"/>
@@ -30,14 +33,19 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="zHh-DZ-kV2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="298-Mh-bD2"/>
+                <constraint firstItem="dKT-Nv-q21" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8eV-tj-MGz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zHh-DZ-kV2" secondAttribute="bottom" constant="620" id="BR1-3z-RYz"/>
                 <constraint firstItem="zHh-DZ-kV2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="MFn-gp-BzL"/>
+                <constraint firstAttribute="bottom" secondItem="dKT-Nv-q21" secondAttribute="bottom" id="XWE-1A-Lfe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zHh-DZ-kV2" secondAttribute="trailing" constant="20" id="f04-af-Li6"/>
+                <constraint firstItem="dKT-Nv-q21" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qGm-Sd-Pzc"/>
+                <constraint firstItem="dKT-Nv-q21" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qJs-68-24i"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="76.339285714285708"/>
         </view>
     </objects>
     <resources>
+        <image name="backGroundImage" width="818" height="818"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
