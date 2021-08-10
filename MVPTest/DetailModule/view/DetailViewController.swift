@@ -12,17 +12,33 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailTaskLabel: UILabel!
     @IBOutlet weak var detailDateLabel: UILabel!
+    @IBOutlet weak var editButtView: UIView!
+    @IBOutlet weak var editButtLabel: UIButton!
     
     var presenter: DetailViewPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.setTaskTest()
+        configureEditButt()
     }
+    
+    private func configureEditButt() {
+        editButtView.backgroundColor = #colorLiteral(red: 0.8275728822, green: 0.9524832368, blue: 0.9309189916, alpha: 0.8467817496)
+        editButtView.layer.cornerRadius = editButtView.bounds.height / 2
+    }
+    
+    @IBAction func editButtAction(_ sender: Any) {
+        
+    }
+    
 }
 
 extension DetailViewController: DetailViewProtocol {
+  
+    
     func setTask(task: Task?) {
-        detailTaskLabel.text = task?.nameEvent   
+        detailTaskLabel.text = task?.nameEvent
+        detailDateLabel.text = "\(DateFormatter.created.string(from: task!.createdDateEvent))"
     }
 }

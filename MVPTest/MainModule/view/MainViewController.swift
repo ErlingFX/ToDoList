@@ -41,6 +41,8 @@ class MainViewController: UIViewController {
     //MARK: - register TableView function
     func configureTableView() {
         maintableView.register(UINib(nibName: "TaskCell", bundle: nil), forCellReuseIdentifier: "TaskCell")
+       
+      
 //        maintableView.insetsContentViewsToSafeArea = true
     }
 }
@@ -76,7 +78,15 @@ extension MainViewController: UITableViewDelegate {
 //    }
     //Header tv
     
-    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 40
+//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+        {
+            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 40))
+                headerView.backgroundColor  = UIColor.clear
+            return headerView
+        }
     
     //Delete cell
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -84,6 +94,7 @@ extension MainViewController: UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
             maintableView.beginUpdates()
             maintableView.deleteRows(at: [indexPath], with: .fade)
            maintableView.endUpdates()
