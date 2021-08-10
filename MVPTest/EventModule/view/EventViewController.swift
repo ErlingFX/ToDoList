@@ -35,7 +35,6 @@ class EventViewController: UIViewController {
         let eventValues = Task(nameEvent: textEvent)
         
         presenter.createNewTask(eventValues)
-//        SQLiteCommands.presentRows()
         presenter.router?.pop()
     
     }
