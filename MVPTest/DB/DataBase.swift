@@ -8,16 +8,16 @@
 import Foundation
 
 
-class DataBase {
-    static var shared = DataBase()
-     var arrayOfEvents: [Task] = []
-    
-
-    func getArrayOfEvent() -> [Task] {
-        return arrayOfEvents
-    }
-    func addArrayOfEvent(addTask: Task) {
-        arrayOfEvents.append(addTask)
-        print(arrayOfEvents)
-    }
-}
+//class DataBase {
+//    static var shared = DataBase()
+//     var arrayOfEvents: [Task] = []
+//
+//
+//    func getArrayOfEvent() -> [Task] {
+//        return arrayOfEvents
+//    }
+//    func addArrayOfEvent(addTask: Task) {
+//        arrayOfEvents.append(addTask)
+//        print(arrayOfEvents)
+//    }
+//}

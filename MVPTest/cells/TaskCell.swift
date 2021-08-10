@@ -11,7 +11,9 @@ class TaskCell: UITableViewCell {
     
     @IBOutlet weak var todoEventLabel: UILabel!
     @IBOutlet weak var todoDateLabel: UILabel!
-    func configureCell(task: Task) {
+    
+    
+    func configureCell(_ task: Task) {
         todoEventLabel.text = task.nameEvent
         todoDateLabel.text = "Created At: \(DateFormatter.created.string(from: task.createdDateEvent))"
     }

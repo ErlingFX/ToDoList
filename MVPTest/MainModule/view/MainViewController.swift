@@ -17,11 +17,17 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         registerTableView()
         setupBarButton()
+        
+        presenter.connectToDatabase()
     }
+    
+    //MARK: - Load data from SQLite database
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        obtainData()
+        presenter.loadDataFromSQLiteDatabase()
+        
     }
     //MARK: - barButton
     private func setupBarButton() {
@@ -49,7 +55,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = maintableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as? TaskCell {
             let model = presenter.dataSource[indexPath.row]
-            cell.configureCell(task: model)
+            cell.configureCell(model)
             return cell
         }
         return UITableViewCell()
@@ -64,9 +70,10 @@ extension MainViewController: UITableViewDelegate {
 }
 //MARK: - extension presenterView
 extension MainViewController: MainViewProtocol {
-    func obtainData() {
-        presenter.dataSource = DataBase.shared.getArrayOfEvent()
+    func reloadData() {
         maintableView.reloadData()
     }
+    
+    
 }
 

@@ -17,19 +17,30 @@ class EventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createTable()
     }
+    
+    //MARK: - Connect to database and create table.
+    private func createTable() {
+        let database = SQLiteDatabase.sharedInstance
+        database.createTable()
+    }
+    
+    
     //MARK: - IBAction
     @IBAction func saveEventButton(_ sender: Any) {
-        guard let textEvent = insertTextEvent.text else { return }
-        print(textEvent)
-        presenter.saveEvent(text: textEvent)
+//        let id: Int = 0
+        let textEvent = insertTextEvent.text ?? ""
+//        let eventValues = Task(id: id, nameEvent: textEvent)
+        let eventValues = Task(nameEvent: textEvent)
+        
+        presenter.createNewTask(eventValues)
+//        SQLiteCommands.presentRows()
         presenter.router?.pop()
+    
     }
 }
 //MARK: - extension presenterView
 extension EventViewController: EventViewProtocol {
-    func saveEvent(text: String) {
-        
-    }
 }
 
