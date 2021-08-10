@@ -12,9 +12,10 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var todoEventLabel: UILabel!
     @IBOutlet weak var todoDateLabel: UILabel!
     
+    @IBOutlet weak var backGroundCellView: UIView!
     
     func configureCell(_ task: Task) {
         todoEventLabel.text = task.nameEvent
-        todoDateLabel.text = "Created At: \(DateFormatter.created.string(from: task.createdDateEvent))"
+        todoDateLabel.text = "\(DateFormatter.created.string(from: task.createdDateEvent))"
     }
 }
