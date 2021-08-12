@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+extension DateFormatter {
+    static let created: DateFormatter = {
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.dateStyle = .medium
+        let dateTimeString = formatter.string(from: currentDateTime)
+        return formatter
+    }()
+}

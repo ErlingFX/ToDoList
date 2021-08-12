@@ -18,9 +18,8 @@ class MainViewController: UIViewController {
         configureTableView()
         setupBarButton()
         presenter.connectToDatabase()
-     
+        
     }
-    
     //MARK: - Load data from SQLite database
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,21 +31,15 @@ class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem = myButton
         self.navigationController!.navigationBar.topItem!.title = "ToDoList"
     }
-    
     //MARK: - selector func barButton
     @objc private func onTapBarButton() {
         self.presenter.didTapPlusButton()
     }
-    
     //MARK: - register TableView function
     func configureTableView() {
         maintableView.register(UINib(nibName: "TaskCell", bundle: nil), forCellReuseIdentifier: "TaskCell")
-       
-      
-//        maintableView.insetsContentViewsToSafeArea = true
     }
 }
-
 //MARK: - data source
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,23 +64,12 @@ extension MainViewController: UITableViewDelegate {
         presenter.beginDetail(task: task)
     }
     
-    // Высота ячейки
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 120
-//
-//    }
-    //Header tv
-    
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 40
-//    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-        {
-            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 40))
-                headerView.backgroundColor  = UIColor.clear
-            return headerView
-        }
-    
+    {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 40))
+        headerView.backgroundColor  = UIColor.clear
+        return headerView
+    }
     //Delete cell
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
@@ -95,11 +77,12 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            maintableView.beginUpdates()
-            maintableView.deleteRows(at: [indexPath], with: .fade)
-           maintableView.endUpdates()
+            presenter.deleteRowFromSQLiteDatabase(task: presenter.dataSource[indexPath.row])
+//            TO-DO не работает удаление
+           
         }
     }
+    
 }
 //MARK: - extension presenterView
 extension MainViewController: MainViewProtocol {

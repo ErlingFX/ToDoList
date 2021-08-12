@@ -26,16 +26,10 @@ class EventPresenter: EventViewPresenterProtocol {
         self.view = view
         self.task = task
     }
-    
-    //    func saveEvent(text: String) {
-    //        let task = Task.init(nameEvent: text)
-    //        DataBase.shared.addArrayOfEvent(addTask: task)
-    //    }
-    
+   
     //MARK: - Create new task
     func createNewTask(_ eventValues:Task) {
-        
-        guard let taskAddedToTable = SQLiteCommands.insertRow(eventValues) else {
+        guard SQLiteCommands.insertRow(eventValues) != nil else {
             print("error")
             return
         }

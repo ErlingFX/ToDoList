@@ -20,6 +20,7 @@ class SQLiteDatabase {
             
             let fileUrl = documnetDirectory.appendingPathComponent("taskList")
                 .appendingPathExtension("sqlite3")
+            print(fileUrl)
             
             dataBase = try Connection(fileUrl.path)
         } catch {

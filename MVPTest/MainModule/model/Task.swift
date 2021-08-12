@@ -8,8 +8,8 @@
 import Foundation
 
 struct Task {
-//    var id: Int
+    var id: Int64?
     var nameEvent: String
-    var createdDateEvent = Date(timeIntervalSince1970: 1)
+    var createdDateEvent = Date()
 //    var image: Data?
 }

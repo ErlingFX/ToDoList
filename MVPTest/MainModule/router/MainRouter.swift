@@ -16,7 +16,7 @@ protocol MainRouterMain {
 protocol MainRouterProtocol: MainRouterMain {
     func initialViewController()
     func showEventModule()
-    func createDetailModule(task: Task)
+    func showDetailModule(task: Task)
 }
 
 class MainRouter: MainRouterProtocol {
@@ -40,7 +40,7 @@ class MainRouter: MainRouterProtocol {
         viewController.pushViewController(eventViewController, animated: true)
     }
     
-    func createDetailModule(task: Task) {
+    func showDetailModule(task: Task) {
         let detailViewController = assamblyBuilder.createDetailModule(task: task, router: self)
         viewController.pushViewController(detailViewController, animated: true)
     }

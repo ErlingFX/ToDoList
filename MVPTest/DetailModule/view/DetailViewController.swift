@@ -36,9 +36,8 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: DetailViewProtocol {
   
-    
     func setTask(task: Task?) {
         detailTaskLabel.text = task?.nameEvent
-        detailDateLabel.text = "\(DateFormatter.created.string(from: task!.createdDateEvent))"
+        detailDateLabel.text = "\(DateFormatter.created.string(from: task!.createdDateEvent ))"
     }
 }

@@ -37,7 +37,7 @@
                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-gE-2zF">
                             <rect key="frame" x="11" y="6" width="46" height="57"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                            <state key="normal" title="Edit"/>
+                            <state key="normal" title="edit"/>
                             <connections>
                                 <action selector="editButtAction:" destination="-1" eventType="touchUpInside" id="4Sk-hF-9fQ"/>
                             </connections>

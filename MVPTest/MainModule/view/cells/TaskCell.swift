@@ -12,10 +12,14 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var todoEventLabel: UILabel!
     @IBOutlet weak var todoDateLabel: UILabel!
     
-    @IBOutlet weak var backGroundCellView: UIView!
     
     func configureCell(_ task: Task) {
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.dateStyle = .medium
+        let dateTimeString = formatter.string(from: currentDateTime)
         todoEventLabel.text = task.nameEvent
-        todoDateLabel.text = "\(DateFormatter.created.string(from: task.createdDateEvent))"
+        todoDateLabel.text = "от: " + dateTimeString
     }
 }

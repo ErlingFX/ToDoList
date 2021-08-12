@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350FB9E526C528EF00EEC1FC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB9E426C528EF00EEC1FC /* Date.swift */; };
 		351712FC26BC142E00703299 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351712FA26BC142E00703299 /* TaskCell.swift */; };
 		351712FD26BC142E00703299 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351712FB26BC142E00703299 /* TaskCell.xib */; };
 		3517131026BC20B400703299 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517130F26BC20B400703299 /* DetailPresenter.swift */; };
@@ -15,8 +16,6 @@
 		3517132C26BC2F0500703299 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517132A26BC2F0500703299 /* EventViewController.swift */; };
 		3517132D26BC2F0500703299 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3517132B26BC2F0500703299 /* EventViewController.xib */; };
 		3517134726BC2F6F00703299 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517134626BC2F6F00703299 /* EventPresenter.swift */; };
-		3517135B26BD43DF00703299 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517135A26BD43DF00703299 /* Date.swift */; };
-		3517138326BD679800703299 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517138226BD679800703299 /* DataBase.swift */; };
 		3517138F26BD879600703299 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517138E26BD879600703299 /* MainRouter.swift */; };
 		3517139726BD8B6D00703299 /* EventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517139626BD8B6D00703299 /* EventRouter.swift */; };
 		3517139F26BD8E8900703299 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517139E26BD8E8900703299 /* DetailRouter.swift */; };
@@ -58,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		2F1B48D1CECF1E95EC5D52F3 /* Pods-MVPTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTest.release.xcconfig"; path = "Target Support Files/Pods-MVPTest/Pods-MVPTest.release.xcconfig"; sourceTree = "<group>"; };
+		350FB9E426C528EF00EEC1FC /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		351712FA26BC142E00703299 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		351712FB26BC142E00703299 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		3517130F26BC20B400703299 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -66,8 +66,6 @@
 		3517132A26BC2F0500703299 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		3517132B26BC2F0500703299 /* EventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
 		3517134626BC2F6F00703299 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
-		3517135A26BD43DF00703299 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		3517138226BD679800703299 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		3517138E26BD879600703299 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		3517139626BD8B6D00703299 /* EventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRouter.swift; sourceTree = "<group>"; };
 		3517139E26BD8E8900703299 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
@@ -171,7 +169,7 @@
 		3517131826BC227B00703299 /* DetailModule */ = {
 			isa = PBXGroup;
 			children = (
-				3517139E26BD8E8900703299 /* DetailRouter.swift */,
+				3544940F26C3D31A00946D9D /* router */,
 				3517131426BC226700703299 /* presenter */,
 				3517132326BC22B900703299 /* view */,
 			);
@@ -190,7 +188,7 @@
 		3517133126BC2F0A00703299 /* EventModule */ = {
 			isa = PBXGroup;
 			children = (
-				3517139626BD8B6D00703299 /* EventRouter.swift */,
+				3544940826C3D30D00946D9D /* router */,
 				3517133526BC2F1E00703299 /* view */,
 				3517134B26BC2F7200703299 /* presenter */,
 			);
@@ -217,17 +215,43 @@
 		3517136226BD43EB00703299 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3517135A26BD43DF00703299 /* Date.swift */,
+				3558900B26BAE6F600CFBDA8 /* SceneDelegate.swift */,
+				3558900926BAE6F600CFBDA8 /* AppDelegate.swift */,
+				350FB9E426C528EF00EEC1FC /* Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		3517138A26BD6EAB00703299 /* DB */ = {
+		3517138A26BD6EAB00703299 /* ScreenBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				3517138226BD679800703299 /* DataBase.swift */,
+				3558905E26BAEB6B00CFBDA8 /* AssamblyModuleBuilder.swift */,
 			);
-			path = DB;
+			path = ScreenBuilder;
+			sourceTree = "<group>";
+		};
+		3544940426C3D30200946D9D /* router */ = {
+			isa = PBXGroup;
+			children = (
+				3517138E26BD879600703299 /* MainRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		3544940826C3D30D00946D9D /* router */ = {
+			isa = PBXGroup;
+			children = (
+				3517139626BD8B6D00703299 /* EventRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		3544940F26C3D31A00946D9D /* router */ = {
+			isa = PBXGroup;
+			children = (
+				3517139E26BD8E8900703299 /* DetailRouter.swift */,
+			);
+			path = router;
 			sourceTree = "<group>";
 		};
 		35588FFD26BAE6F600CFBDA8 = {
@@ -255,14 +279,11 @@
 		3558900826BAE6F600CFBDA8 /* MVPTest */ = {
 			isa = PBXGroup;
 			children = (
-				35AAA4E926C153B800AC195E /* SQLiteDatabase */,
-				3558900926BAE6F600CFBDA8 /* AppDelegate.swift */,
-				3558900B26BAE6F600CFBDA8 /* SceneDelegate.swift */,
-				3517138A26BD6EAB00703299 /* DB */,
-				3558905E26BAEB6B00CFBDA8 /* AssamblyModuleBuilder.swift */,
+				35AAA4E926C153B800AC195E /* DatabaseSQLite */,
 				3558904926BAEA9300CFBDA8 /* MainModule */,
 				3517133126BC2F0A00703299 /* EventModule */,
 				3517131826BC227B00703299 /* DetailModule */,
+				3517138A26BD6EAB00703299 /* ScreenBuilder */,
 				3517130826BC144300703299 /* storyboards */,
 				3517136226BD43EB00703299 /* Extension */,
 				3558901226BAE6F700CFBDA8 /* Assets.xcassets */,
@@ -292,7 +313,7 @@
 		3558904926BAEA9300CFBDA8 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
-				3517138E26BD879600703299 /* MainRouter.swift */,
+				3544940426C3D30200946D9D /* router */,
 				3558904D26BAEAAC00CFBDA8 /* model */,
 				3558905526BAEABD00CFBDA8 /* view */,
 				3558905126BAEAB700CFBDA8 /* presenter */,
@@ -326,13 +347,13 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		35AAA4E926C153B800AC195E /* SQLiteDatabase */ = {
+		35AAA4E926C153B800AC195E /* DatabaseSQLite */ = {
 			isa = PBXGroup;
 			children = (
 				35AAA4EA26C153DF00AC195E /* SQLiteDatabase.swift */,
 				35AAA50526C2784400AC195E /* SQLiteCommands.swift */,
 			);
-			name = SQLiteDatabase;
+			name = DatabaseSQLite;
 			sourceTree = "<group>";
 		};
 		7DD2E441D4D008352C6A77B1 /* Frameworks */ = {
@@ -588,13 +609,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3517131E26BC22B500703299 /* DetailViewController.swift in Sources */,
-				3517135B26BD43DF00703299 /* Date.swift in Sources */,
 				3558904226BAE73500CFBDA8 /* MainPresenter.swift in Sources */,
 				35AAA50626C2784400AC195E /* SQLiteCommands.swift in Sources */,
 				351712FC26BC142E00703299 /* TaskCell.swift in Sources */,
-				3517138326BD679800703299 /* DataBase.swift in Sources */,
 				3517138F26BD879600703299 /* MainRouter.swift in Sources */,
 				3558900E26BAE6F600CFBDA8 /* MainViewController.swift in Sources */,
+				350FB9E526C528EF00EEC1FC /* Date.swift in Sources */,
 				3517131026BC20B400703299 /* DetailPresenter.swift in Sources */,
 				35AAA4EB26C153DF00AC195E /* SQLiteDatabase.swift in Sources */,
 				3517134726BC2F6F00703299 /* EventPresenter.swift in Sources */,

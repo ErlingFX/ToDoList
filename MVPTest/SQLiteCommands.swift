@@ -10,25 +10,24 @@ import SQLite
 
 class SQLiteCommands {
     
-    static var table = Table("task")
+    static var table = Table("tasks")
     
     //Выражения
-    static let id = Expression<Int>("id")
+    static let id = Expression<Int64>("id")
     static let nameEvent = Expression<String>("nameEvent")
     static let createdDateEvent = Expression<Date>("createdDateEvent")
     //    static let image = Expression<Data>("image")
     
-    //Создаю таблицу
+    //MARK: - Создаю таблицу
     static func createTable() {
         guard let database = SQLiteDatabase.sharedInstance.dataBase else {
             print("Datastore connction error")
             return
         }
-        
         do {
             // ifNotExists: true - НЕ будет создавать таблицу, если она уже существует
             try database.run(table.create(ifNotExists: true) { table in
-                table.column(id, primaryKey: true)
+                table.column(id, primaryKey: .autoincrement)
                 table.column(nameEvent)
                 table.column(createdDateEvent)
                 //                table.column(image)
@@ -37,16 +36,15 @@ class SQLiteCommands {
             print("Table already exists: \(error)")
         }
     }
-    //Вставляю строку
+    //MARK: - Вставляю строку
     static func insertRow(_ contactValues: Task) -> Bool? {
         guard let database = SQLiteDatabase.sharedInstance.dataBase else {
             print("Datastore connection error")
             return nil
         }
-        
         do {
-            // не хватает id и image
-            try database.run(
+            // не хватает image
+           let rowId =  try database.run(
                 table.insert(
                     nameEvent <- contactValues.nameEvent,
                     createdDateEvent <- contactValues.createdDateEvent
@@ -61,41 +59,48 @@ class SQLiteCommands {
             return false
         }
     }
-    
-    // Present Rows (Настоящие строки?)
+    //MARK: - Present Rows (Настоящие строки?)
     static func presentRows() -> [Task]? {
         guard let database = SQLiteDatabase.sharedInstance.dataBase  else {
             print("Datastore connection error")
             return nil
         }
-        
         //Task Array
         var taskArray = [Task]()
         
-        //Sorting data in descending order by ID (Сортировка данных в порядке убывания по ID)
-        //        table = table.order(id.desc)
-        
+        //MARK: -Sorting data in descending order by ID (Сортировка данных в порядке убывания по ID)
+        table = table.order(id.desc)
         do {
             for task in try database.prepare(table) {
-                //                let idValue = task[id]
+                let idValue = task[id]
                 let nameIventValue = task[nameEvent]
                 let dataEventValue = task[createdDateEvent]
-                //                let imageValue = task[image]
+                //let imageValue = task[image]
                 
-                //Create object ( Создаю объект)
+                //MARK: - Create object ( Создаю объект)
+                
                 //                let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue, image: imageValue)
-                let taskObject = Task(nameEvent: nameIventValue, createdDateEvent: dataEventValue)
+                let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue)
                 
-                
-                //Add object to an array (Добавить объект в массив)
+                //MARK: - Add object to an array - (Добавить объект в массив)
                 taskArray.append(taskObject)
-                
-                //                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent]), image: \(task[image])")
-                print("nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent])")
+                // image: \(task[image])
+                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent])")
             }
         } catch {
             print("Present row error: \(error)")
         }
         return taskArray
+    }
+    
+    static func deleteRow(idTask: Int64) -> Bool {
+        do {
+            try SQLiteDatabase.sharedInstance.dataBase?.execute("DELETE FROM \"tasks\" WHERE \"id\" = \(idTask)")
+            return true
+        } catch {
+            print(error)
+            print("Delete task failed")
+        }
+        return false
     }
 }

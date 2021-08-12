@@ -17,6 +17,7 @@ protocol MainViewPresenterProtocol: class {
     func beginDetail(task: Task)
     func connectToDatabase()
     func loadDataFromSQLiteDatabase()
+    func deleteRowFromSQLiteDatabase(task: Task)
     //не дописал 2 метода роу ин секшн и селл фор роу ат
     //
     init(view: MainViewProtocol, router: MainRouterProtocol)
@@ -32,6 +33,14 @@ class MainPresenter: MainViewPresenterProtocol {
         self.view = view
         self.router = router
     }
+ 
+    func didTapPlusButton() {
+        router?.showEventModule()
+    }
+    
+    func beginDetail(task: Task) {
+        router?.showDetailModule(task: task)
+    }
     
     func connectToDatabase() {
         _ = SQLiteDatabase.sharedInstance
@@ -39,14 +48,17 @@ class MainPresenter: MainViewPresenterProtocol {
     
     func loadDataFromSQLiteDatabase() {
         dataSource = SQLiteCommands.presentRows() ?? []
+        print(dataSource)
         view?.reloadData()
     }
     
-    func didTapPlusButton() {
-        router?.showEventModule()
+    func deleteRowFromSQLiteDatabase(task: Task) {
+        
+        SQLiteCommands.deleteRow(idTask: task.id ?? 0)
+        dataSource = SQLiteCommands.presentRows() ?? []
+        view?.reloadData()
+        //обновить датасурс
     }
     
-    func beginDetail(task: Task) {
-        router?.createDetailModule(task: task)
-    }
+    
 }

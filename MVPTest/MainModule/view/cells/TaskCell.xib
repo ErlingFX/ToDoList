@@ -26,6 +26,10 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6v-dc-OWv">
+                    <rect key="frame" x="0.0" y="0.0" width="301" height="140"/>
+                    <color key="backgroundColor" red="0.081977717578411102" green="0.34894928336143494" blue="0.35619786381721497" alpha="0.25242544009985513" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="FlB-Iz-Ia3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -36,7 +40,11 @@
                 <constraint firstItem="RSG-s5-0gp" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" constant="10" id="TBc-Yr-Sfr"/>
                 <constraint firstItem="P44-we-Sok" firstAttribute="top" secondItem="FlB-Iz-Ia3" secondAttribute="top" constant="49" id="cci-Hu-3e4"/>
                 <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="P44-we-Sok" secondAttribute="bottom" constant="20" id="ciB-Ar-Ebn"/>
+                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="trailing" secondItem="D6v-dc-OWv" secondAttribute="trailing" id="elw-kp-nxp"/>
+                <constraint firstItem="D6v-dc-OWv" firstAttribute="top" secondItem="hUh-T9-bPD" secondAttribute="top" id="n6F-Cp-83n"/>
+                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="D6v-dc-OWv" secondAttribute="bottom" id="qCY-zz-teb"/>
                 <constraint firstItem="P44-we-Sok" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" constant="169" id="rfH-w1-Wr0"/>
+                <constraint firstItem="D6v-dc-OWv" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" id="xWD-Zc-YWA"/>
                 <constraint firstItem="RSG-s5-0gp" firstAttribute="top" secondItem="hUh-T9-bPD" secondAttribute="top" constant="10" id="xpz-0U-WHP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
