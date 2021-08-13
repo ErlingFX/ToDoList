@@ -9,6 +9,8 @@ import UIKit
 
 class EditViewController: UIViewController {
     
+    var presenter: EditViewPresenterProtocol!
+    
     @IBOutlet weak var editNameEventLabel: UILabel!
     @IBOutlet weak var editButtonLabel: UIButton!
     
@@ -16,12 +18,12 @@ class EditViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
     @IBAction func editButtonAction(_ sender: Any) {
-       
         editButtonLabel.setTitle("...", for: .normal)
         editButtonLabel.setImage(UIImage(named:"editImage"), for: .normal)
-//        editButtonLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        }
+    }
+}
+
+extension EditViewController: EditViewProtocol {
+    
 }

@@ -41,7 +41,9 @@ class MainRouter: MainRouterProtocol {
     }
     
     func showDetailModule(task: Task) {
-        let detailViewController = assamblyBuilder.createDetailModule(task: task, router: self)
+//        let detailViewController = assamblyBuilder.createDetailModule(task: task, router: self)
+        let detailRouter = DetailRouter(navigationController: viewController, assamblyBuilder: assamblyBuilder)
+        let detailViewController = assamblyBuilder.createDetailModule(task: task, router: detailRouter)
         viewController.pushViewController(detailViewController, animated: true)
     }
 }

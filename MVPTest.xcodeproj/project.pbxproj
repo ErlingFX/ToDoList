@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		350FB9E526C528EF00EEC1FC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB9E426C528EF00EEC1FC /* Date.swift */; };
+		3516888D26C551A40069C810 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3516888B26C551A40069C810 /* EditViewController.swift */; };
+		3516888E26C551A40069C810 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3516888C26C551A40069C810 /* EditViewController.xib */; };
+		3516889E26C554820069C810 /* EditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3516889D26C554820069C810 /* EditPresenter.swift */; };
+		351688A726C5553B0069C810 /* EditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351688A626C5553B0069C810 /* EditRouter.swift */; };
 		351712FC26BC142E00703299 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351712FA26BC142E00703299 /* TaskCell.swift */; };
 		351712FD26BC142E00703299 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351712FB26BC142E00703299 /* TaskCell.xib */; };
 		3517131026BC20B400703299 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517130F26BC20B400703299 /* DetailPresenter.swift */; };
@@ -58,6 +62,10 @@
 /* Begin PBXFileReference section */
 		2F1B48D1CECF1E95EC5D52F3 /* Pods-MVPTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTest.release.xcconfig"; path = "Target Support Files/Pods-MVPTest/Pods-MVPTest.release.xcconfig"; sourceTree = "<group>"; };
 		350FB9E426C528EF00EEC1FC /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		3516888B26C551A40069C810 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		3516888C26C551A40069C810 /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
+		3516889D26C554820069C810 /* EditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPresenter.swift; sourceTree = "<group>"; };
+		351688A626C5553B0069C810 /* EditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRouter.swift; sourceTree = "<group>"; };
 		351712FA26BC142E00703299 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		351712FB26BC142E00703299 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		3517130F26BC20B400703299 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -138,6 +146,41 @@
 				357746B8C6430657B72577C9 /* Pods-MVPTestTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3516889226C551AA0069C810 /* EditModule */ = {
+			isa = PBXGroup;
+			children = (
+				351688AB26C5553E0069C810 /* router */,
+				351688A226C554850069C810 /* presenter */,
+				3516889926C554710069C810 /* view */,
+			);
+			path = EditModule;
+			sourceTree = "<group>";
+		};
+		3516889926C554710069C810 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3516888B26C551A40069C810 /* EditViewController.swift */,
+				3516888C26C551A40069C810 /* EditViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		351688A226C554850069C810 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3516889D26C554820069C810 /* EditPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		351688AB26C5553E0069C810 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				351688A626C5553B0069C810 /* EditRouter.swift */,
+			);
+			path = router;
 			sourceTree = "<group>";
 		};
 		3517130126BC143100703299 /* cells */ = {
@@ -283,6 +326,7 @@
 				3558904926BAEA9300CFBDA8 /* MainModule */,
 				3517133126BC2F0A00703299 /* EventModule */,
 				3517131826BC227B00703299 /* DetailModule */,
+				3516889226C551AA0069C810 /* EditModule */,
 				3517138A26BD6EAB00703299 /* ScreenBuilder */,
 				3517130826BC144300703299 /* storyboards */,
 				3517136226BD43EB00703299 /* Extension */,
@@ -478,6 +522,7 @@
 				3517131F26BC22B500703299 /* DetailViewController.xib in Resources */,
 				351712FD26BC142E00703299 /* TaskCell.xib in Resources */,
 				3558901326BAE6F700CFBDA8 /* Assets.xcassets in Resources */,
+				3516888E26C551A40069C810 /* EditViewController.xib in Resources */,
 				3558901126BAE6F600CFBDA8 /* Main.storyboard in Resources */,
 				3517132D26BC2F0500703299 /* EventViewController.xib in Resources */,
 				3558905A26BAEAD900CFBDA8 /* MainViewController.xib in Resources */,
@@ -614,10 +659,13 @@
 				351712FC26BC142E00703299 /* TaskCell.swift in Sources */,
 				3517138F26BD879600703299 /* MainRouter.swift in Sources */,
 				3558900E26BAE6F600CFBDA8 /* MainViewController.swift in Sources */,
+				351688A726C5553B0069C810 /* EditRouter.swift in Sources */,
 				350FB9E526C528EF00EEC1FC /* Date.swift in Sources */,
 				3517131026BC20B400703299 /* DetailPresenter.swift in Sources */,
+				3516888D26C551A40069C810 /* EditViewController.swift in Sources */,
 				35AAA4EB26C153DF00AC195E /* SQLiteDatabase.swift in Sources */,
 				3517134726BC2F6F00703299 /* EventPresenter.swift in Sources */,
+				3516889E26C554820069C810 /* EditPresenter.swift in Sources */,
 				3517132C26BC2F0500703299 /* EventViewController.swift in Sources */,
 				3558900A26BAE6F600CFBDA8 /* AppDelegate.swift in Sources */,
 				3558903D26BAE70100CFBDA8 /* Task.swift in Sources */,

@@ -29,9 +29,8 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func editButtAction(_ sender: Any) {
-        
+        self.presenter.beginEditScreen()
     }
-    
 }
 
 extension DetailViewController: DetailViewProtocol {
