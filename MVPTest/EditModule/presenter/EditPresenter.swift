@@ -8,15 +8,17 @@
 import Foundation
 
 protocol EditViewProtocol {
-    
+    func transferData(task: Task?)
 }
 
 protocol EditViewPresenterProtocol {
     func editTextEvent()
+    func transferDataTest()
     init(view: EditViewProtocol, task: Task)
 }
 
 class EditPresenter: EditViewPresenterProtocol {
+   
     var task: Task
     var view: EditViewProtocol?
     var router: EditRouter?
@@ -26,6 +28,9 @@ class EditPresenter: EditViewPresenterProtocol {
         self.task = task
     }
 
+    func transferDataTest() {
+        view?.transferData(task: task)
+    }
     func editTextEvent() {
     }
 }

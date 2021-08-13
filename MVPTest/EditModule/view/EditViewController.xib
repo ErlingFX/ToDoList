@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="editButtonLabel" destination="5MW-9h-Coc" id="f9v-ta-gSo"/>
                 <outlet property="editNameEventLabel" destination="Xwb-q6-ovN" id="EWm-M5-Vzc"/>
+                <outlet property="editNameEventTextView" destination="DEi-bG-RBB" id="uSL-Oy-S5I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,6 +41,14 @@
                         <action selector="editButtonAction:" destination="-1" eventType="touchUpInside" id="Ixv-LK-bP6"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DEi-bG-RBB">
+                    <rect key="frame" x="87" y="432" width="240" height="128"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,17 +58,24 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xwb-q6-ovN" secondAttribute="bottom" constant="604" id="6gC-Vx-uG3"/>
                 <constraint firstItem="Xwb-q6-ovN" firstAttribute="top" secondItem="5MW-9h-Coc" secondAttribute="bottom" constant="8" symbolic="YES" id="9pS-DY-WmG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uq2-ue-f5B" secondAttribute="trailing" id="A0L-E9-ti7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DEi-bG-RBB" secondAttribute="bottom" constant="302" id="A6U-5b-jMH"/>
                 <constraint firstItem="5MW-9h-Coc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="OZ2-7N-wc4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DEi-bG-RBB" secondAttribute="trailing" constant="87" id="PcJ-eC-5DD"/>
                 <constraint firstItem="5MW-9h-Coc" firstAttribute="trailing" secondItem="Xwb-q6-ovN" secondAttribute="trailing" id="R4P-RX-yUX"/>
                 <constraint firstItem="5MW-9h-Coc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="344" id="YDN-xy-PkX"/>
                 <constraint firstItem="Uq2-ue-f5B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ba7-Vt-9L7"/>
+                <constraint firstItem="DEi-bG-RBB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="e6g-u7-aiB"/>
                 <constraint firstItem="Xwb-q6-ovN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="ijr-YZ-vPk"/>
+                <constraint firstItem="DEi-bG-RBB" firstAttribute="top" secondItem="Xwb-q6-ovN" secondAttribute="bottom" constant="174" id="kQW-Wu-0cJ"/>
                 <constraint firstItem="Uq2-ue-f5B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lzF-DL-a4S"/>
             </constraints>
             <point key="canvasLocation" x="-165.21739130434784" y="71.651785714285708"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
