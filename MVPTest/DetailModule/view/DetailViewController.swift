@@ -23,6 +23,13 @@ class DetailViewController: UIViewController {
         configureEditButt()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let textEvent = detailTaskLabel.text ?? ""
+        let eventValues = Task(nameEvent: textEvent)
+        presenter.loadDataFromSQLiteDatabase(eventValues)
+    }
+    
     private func configureEditButt() {
         editButtView.backgroundColor = #colorLiteral(red: 0.8275728822, green: 0.9524832368, blue: 0.9309189916, alpha: 0.8467817496)
         editButtView.layer.cornerRadius = editButtView.bounds.height / 2

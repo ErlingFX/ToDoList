@@ -44,7 +44,7 @@ class SQLiteCommands {
         }
         do {
             // не хватает image
-           let rowId =  try database.run(
+            let rowId =  try database.run(
                 table.insert(
                     nameEvent <- contactValues.nameEvent,
                     createdDateEvent <- contactValues.createdDateEvent
@@ -78,8 +78,6 @@ class SQLiteCommands {
                 //let imageValue = task[image]
                 
                 //MARK: - Create object ( Создаю объект)
-                
-                //                let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue, image: imageValue)
                 let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue)
                 
                 //MARK: - Add object to an array - (Добавить объект в массив)
@@ -92,15 +90,54 @@ class SQLiteCommands {
         }
         return taskArray
     }
-    
+    //MARK: - Удаляю ячейку
     static func deleteRow(idTask: Int64) -> Bool {
         do {
-            try SQLiteDatabase.sharedInstance.dataBase?.execute("DELETE FROM \"tasks\" WHERE \"id\" = \(idTask)")
+            try SQLiteDatabase.sharedInstance.dataBase?.execute("DELETE FROM tasks WHERE \"id\" = \(idTask)")
             return true
         } catch {
             print(error)
             print("Delete task failed")
         }
         return false
+    }
+    //MARK: - Обновляю ячейку
+    static func updateRow(idTask: Int64, newTask: String){
+        do {
+            //            try SQLiteDatabase.sharedInstance.dataBase?.execute("UPDATE \"tasks\" SET nameEvent = \(newTask) WHERE id = \(idTask)")
+            try SQLiteDatabase.sharedInstance.dataBase?.execute("UPDATE tasks SET nameEvent = '\(newTask)' WHERE id = \(idTask)")
+            print("update NameEvent")
+        } catch {
+            print(error)
+            print("Update task failed")
+        }
+        
+    }
+    
+    
+    static func obtainTask(task: Task) -> Task? {
+        guard let database = SQLiteDatabase.sharedInstance.dataBase  else {
+            print("Datastore connection error")
+            return nil
+        }
+        var taskArray = [Task]()
+        table = table.order(id.desc)
+        do {
+            for task in try database.prepare(table) {
+                let idValue = task[id]
+                let nameIventValue = task[nameEvent]
+                let dataEventValue = task[createdDateEvent]
+                //let imageValue = task[image]
+                
+                
+                let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue)
+                taskArray.append(taskObject)
+                // image: \(task[image])
+                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent])")
+            }
+        } catch {
+            print("Present row error: \(error)")
+        }
+        return taskArray.first
     }
 }

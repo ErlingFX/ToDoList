@@ -78,6 +78,8 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             presenter.deleteRowFromSQLiteDatabase(task: presenter.dataSource[indexPath.row])
+        } else {
+            
         }
     }
 }

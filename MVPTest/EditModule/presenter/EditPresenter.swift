@@ -12,16 +12,17 @@ protocol EditViewProtocol {
 }
 
 protocol EditViewPresenterProtocol {
-    func editTextEvent()
+    var task: Task { get set }
     func transferDataTest()
+    func updateRowFromSQLiteDatabase(task: Task)
     init(view: EditViewProtocol, task: Task)
 }
 
 class EditPresenter: EditViewPresenterProtocol {
-   
     var task: Task
     var view: EditViewProtocol?
     var router: EditRouter?
+    var dataSource: [Task] = []
     
     required init(view: EditViewProtocol, task: Task) {
         self.view = view
@@ -31,6 +32,13 @@ class EditPresenter: EditViewPresenterProtocol {
     func transferDataTest() {
         view?.transferData(task: task)
     }
-    func editTextEvent() {
+   
+    func updateRowFromSQLiteDatabase(task: Task) {
+//        SQLiteCommands.deleteRow(idTask: task.id ?? 0)
+//        dataSource = SQLiteCommands.presentRows() ?? []
+//        view?.reloadData()
+        
+        SQLiteCommands.updateRow(idTask: task.id ?? 0, newTask: task.nameEvent )
+        dataSource = SQLiteCommands.presentRows() ?? []
     }
 }

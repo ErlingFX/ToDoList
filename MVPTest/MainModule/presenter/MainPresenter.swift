@@ -24,7 +24,6 @@ protocol MainViewPresenterProtocol: class {
 }
 
 class MainPresenter: MainViewPresenterProtocol {
-    
     weak var view: MainViewProtocol?
     var dataSource: [Task] = []
     var router: MainRouterProtocol?

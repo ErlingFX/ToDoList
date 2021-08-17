@@ -151,22 +151,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C91DE8EC-09D8-48BA-A5AD-0D5AD355376F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MVPTest/DetailModule/presenter/DetailPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "beginEditScreen()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "34B59C14-289E-4EBF-AC2A-82FDCEABAD5B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -183,49 +167,145 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F442C37C-DA39-4F72-8220-290E6B8EF91A"
+            uuid = "9071DD76-47C3-4ED1-97A8-EF57AF0C4CD8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MVPTest/DetailModule/router/DetailRouter.swift"
+            filePath = "MVPTest/EditModule/presenter/EditPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "showEditModule(task:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "updateRowFromSQLiteDatabase(task:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B10BBDDE-F59E-4EAC-B069-6FE332762356"
+            uuid = "2E7A79AE-86CF-44FF-99BB-F1282D0001A7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MVPTest/ScreenBuilder/AssamblyModuleBuilder.swift"
+            filePath = "MVPTest/EditModule/presenter/EditPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "createEditModule(task:router:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "updateRowFromSQLiteDatabase(task:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "389B017B-311A-4973-9F53-73838F9609D1"
+            uuid = "4ADE3A09-FC80-4535-B3DD-42A9B820F05C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MVPTest/DetailModule/view/DetailViewController.swift"
+            filePath = "MVPTest/SQLiteCommands.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "editButtAction(_:)"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "updateRow(idTask:newTask:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4ADE3A09-FC80-4535-B3DD-42A9B820F05C - 8239a21296de6c7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MVPTest.SQLiteCommands.updateRow(idTask: Swift.Int64, newTask: Swift.String) -&gt; ()"
+                  moduleName = "MVPTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandernazarov/Desktop/MVPTest%202/MVPTest/SQLiteCommands.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "3225">
+               </Location>
+               <Location
+                  uuid = "4ADE3A09-FC80-4535-B3DD-42A9B820F05C - 8239a21296de6c7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MVPTest.SQLiteCommands.updateRow(idTask: Swift.Int64, newTask: Swift.String) -&gt; ()"
+                  moduleName = "MVPTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandernazarov/Desktop/MVPTest%202/MVPTest/SQLiteCommands.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "3560">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6B88E85-88C2-4ECB-A1A8-11232901DD15"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVPTest/SQLiteCommands.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "updateRow(idTask:newTask:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "882E8362-04A0-44CB-ACE3-E7EF0ACAC8F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVPTest/SQLiteCommands.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "updateRow(idTask:newTask:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "882E8362-04A0-44CB-ACE3-E7EF0ACAC8F4 - 8239a21296de6c7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MVPTest.SQLiteCommands.updateRow(idTask: Swift.Int64, newTask: Swift.String) -&gt; ()"
+                  moduleName = "MVPTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandernazarov/Desktop/MVPTest%202/MVPTest/SQLiteCommands.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "3225">
+               </Location>
+               <Location
+                  uuid = "882E8362-04A0-44CB-ACE3-E7EF0ACAC8F4 - 8239a21296de6c7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MVPTest.SQLiteCommands.updateRow(idTask: Swift.Int64, newTask: Swift.String) -&gt; ()"
+                  moduleName = "MVPTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexandernazarov/Desktop/MVPTest%202/MVPTest/SQLiteCommands.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "3560">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
