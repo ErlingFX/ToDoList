@@ -11,5 +11,5 @@ struct Task {
     var id: Int64?
     var nameEvent: String
     var createdDateEvent = Date()
-//    var image: Data?
+    var image: Data?
 }

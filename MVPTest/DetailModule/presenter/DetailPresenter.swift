@@ -15,7 +15,7 @@ protocol DetailViewPresenterProtocol: class {
     init(view: DetailViewProtocol, task: Task)
     func setTaskTest()
     func beginEditScreen()
-    func loadDataFromSQLiteDatabase(_ detailValues: Task)
+    func loadDataFromSQLiteDatabase()
 }
 
 class DetailPresenter: DetailViewPresenterProtocol {
@@ -38,10 +38,13 @@ class DetailPresenter: DetailViewPresenterProtocol {
     router?.showEditModule(task: task)
     }
     
-    func loadDataFromSQLiteDatabase(_ detailValues: Task) {
-        guard SQLiteCommands.obtainTask(task: detailValues) != nil else {
-            print("error")
+    func loadDataFromSQLiteDatabase() {
+        guard let taskNew = SQLiteCommands.obtainTask(task: task) else {
+            print("error detailValue")
             return
         }
+        
+        self.task = taskNew
+        view?.setTask(task: task)
     }
 }

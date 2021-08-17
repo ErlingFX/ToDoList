@@ -14,9 +14,9 @@ class SQLiteCommands {
     
     //Выражения
     static let id = Expression<Int64>("id")
-    static let nameEvent = Expression<String>("nameEvent")
+    static var nameEvent = Expression<String>("nameEvent")
     static let createdDateEvent = Expression<Date>("createdDateEvent")
-    //    static let image = Expression<Data>("image")
+    static let image = Expression<Data?>("image")
     
     //MARK: - Создаю таблицу
     static func createTable() {
@@ -30,7 +30,7 @@ class SQLiteCommands {
                 table.column(id, primaryKey: .autoincrement)
                 table.column(nameEvent)
                 table.column(createdDateEvent)
-                //                table.column(image)
+                table.column(image)
             })
         } catch {
             print("Table already exists: \(error)")
@@ -44,10 +44,11 @@ class SQLiteCommands {
         }
         do {
             // не хватает image
-            let rowId =  try database.run(
+            let rowId = try database.run(
                 table.insert(
                     nameEvent <- contactValues.nameEvent,
-                    createdDateEvent <- contactValues.createdDateEvent
+                    createdDateEvent <- contactValues.createdDateEvent,
+                    image <- contactValues.image
                 )
             )
             return true
@@ -75,15 +76,15 @@ class SQLiteCommands {
                 let idValue = task[id]
                 let nameIventValue = task[nameEvent]
                 let dataEventValue = task[createdDateEvent]
-                //let imageValue = task[image]
+                let imageValue = task[image]
                 
                 //MARK: - Create object ( Создаю объект)
-                let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue)
+                let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue, image: imageValue)
                 
                 //MARK: - Add object to an array - (Добавить объект в массив)
                 taskArray.append(taskObject)
                 // image: \(task[image])
-                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent])")
+                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent]), image: \(task[image])")
             }
         } catch {
             print("Present row error: \(error)")
@@ -101,39 +102,36 @@ class SQLiteCommands {
         }
         return false
     }
-    //MARK: - Обновляю ячейку
+    //MARK: - Изменяю ячейку
     static func updateRow(idTask: Int64, newTask: String){
         do {
-            //            try SQLiteDatabase.sharedInstance.dataBase?.execute("UPDATE \"tasks\" SET nameEvent = \(newTask) WHERE id = \(idTask)")
             try SQLiteDatabase.sharedInstance.dataBase?.execute("UPDATE tasks SET nameEvent = '\(newTask)' WHERE id = \(idTask)")
             print("update NameEvent")
         } catch {
             print(error)
             print("Update task failed")
         }
-        
     }
     
-    
+    //MARK: - обновляю данные
     static func obtainTask(task: Task) -> Task? {
         guard let database = SQLiteDatabase.sharedInstance.dataBase  else {
             print("Datastore connection error")
             return nil
         }
         var taskArray = [Task]()
-        table = table.order(id.desc)
+        let taskq = table.filter(id == task.id!)
         do {
-            for task in try database.prepare(table) {
+            for task in try database.prepare(taskq) {
                 let idValue = task[id]
                 let nameIventValue = task[nameEvent]
                 let dataEventValue = task[createdDateEvent]
-                //let imageValue = task[image]
+                let imageValue = task[image]
                 
-                
-                let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue)
+                let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue, image: imageValue)
                 taskArray.append(taskObject)
                 // image: \(task[image])
-                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent])")
+                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent]), image: \(task[image])")
             }
         } catch {
             print("Present row error: \(error)")

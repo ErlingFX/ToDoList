@@ -25,9 +25,7 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let textEvent = detailTaskLabel.text ?? ""
-        let eventValues = Task(nameEvent: textEvent)
-        presenter.loadDataFromSQLiteDatabase(eventValues)
+        presenter.loadDataFromSQLiteDatabase()
     }
     
     private func configureEditButt() {

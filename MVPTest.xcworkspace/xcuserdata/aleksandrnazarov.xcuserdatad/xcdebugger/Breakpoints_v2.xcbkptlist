@@ -30,8 +30,8 @@
             filePath = "MVPTest/SQLiteCommands.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "updateRow(idTask:newTask:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "MVPTest/SQLiteCommands.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "obtainTask(task:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -71,48 +71,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "77A1ACC6-1D23-40D2-BFFB-309CDD9DAC7D"
+            uuid = "4BFBEBD0-A9E4-49D3-9405-B9C053754E70"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MVPTest/SQLiteCommands.swift"
+            filePath = "MVPTest/DetailModule/presenter/DetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "obtainTask(task:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "loadDataFromSQLiteDatabase()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "76B1C425-207F-4272-8EA7-EC084DDE1232"
+            uuid = "BA2E9EC9-54C1-4681-BC1E-09CC5EE0D2ED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MVPTest/SQLiteCommands.swift"
+            filePath = "MVPTest/DetailModule/presenter/DetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "obtainTask(task:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "loadDataFromSQLiteDatabase()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AF277A93-8F2D-47F5-B1EC-0F922B064605"
+            uuid = "D77BD4FE-2E6D-4D25-95F2-DD8F45DB0277"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MVPTest/SQLiteCommands.swift"
+            filePath = "MVPTest/DetailModule/presenter/DetailPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "obtainTask(task:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "loadDataFromSQLiteDatabase()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

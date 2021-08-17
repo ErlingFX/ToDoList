@@ -25,12 +25,16 @@ class EventViewController: UIViewController {
     }
     //MARK: - IBAction
     @IBAction func saveEventButton(_ sender: Any) {
-        let textEvent = insertTextEvent.text ?? ""
-        let eventValues = Task(nameEvent: textEvent)
-        presenter.createNewTask(eventValues)
-        presenter.router?.pop()
+        if let textEvent = insertTextEvent.text {
+            let eventValues = Task(nameEvent: textEvent)
+            presenter.createNewTask(eventValues)
+            presenter.router?.pop()
+        } else {
+            print("No text")
+        }
     }
 }
+
 //MARK: - extension presenterView
 extension EventViewController: EventViewProtocol {
 }
