@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditViewController" customModule="MVPTest" customModuleProvider="target">
             <connections>
+                <outlet property="addImageLabel" destination="BAr-VF-g5O" id="fNq-8y-0i0"/>
+                <outlet property="backgroundImageView" destination="Uq2-ue-f5B" id="QuM-xd-9XB"/>
                 <outlet property="editButtonLabel" destination="5MW-9h-Coc" id="f9v-ta-gSo"/>
                 <outlet property="editImage" destination="MpH-MW-oey" id="iTW-Ot-ZCs"/>
                 <outlet property="editNameEventLabel" destination="Xwb-q6-ovN" id="EWm-M5-Vzc"/>
@@ -43,6 +45,13 @@
                         <action selector="editButtonAction:" destination="-1" eventType="touchUpInside" id="Ixv-LK-bP6"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAr-VF-g5O">
+                    <rect key="frame" x="7" y="66" width="73" height="30"/>
+                    <state key="normal" title="Add image"/>
+                    <connections>
+                        <action selector="addImageAction:" destination="-1" eventType="touchUpInside" id="5qn-st-Tmz"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,11 +63,13 @@
                 <constraint firstItem="Xwb-q6-ovN" firstAttribute="top" secondItem="5MW-9h-Coc" secondAttribute="bottom" constant="-21" id="9pS-DY-WmG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uq2-ue-f5B" secondAttribute="trailing" id="A0L-E9-ti7"/>
                 <constraint firstItem="5MW-9h-Coc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="OZ2-7N-wc4"/>
+                <constraint firstItem="BAr-VF-g5O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="PPP-uA-lxJ"/>
                 <constraint firstItem="MpH-MW-oey" firstAttribute="width" secondItem="5MW-9h-Coc" secondAttribute="width" multiplier="1.12" constant="-3.3600000000000065" id="PQ1-5o-gVt"/>
                 <constraint firstItem="5MW-9h-Coc" firstAttribute="trailing" secondItem="Xwb-q6-ovN" secondAttribute="trailing" id="R4P-RX-yUX"/>
                 <constraint firstItem="5MW-9h-Coc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="341" id="YDN-xy-PkX"/>
                 <constraint firstItem="Uq2-ue-f5B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ba7-Vt-9L7"/>
                 <constraint firstItem="Xwb-q6-ovN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="ijr-YZ-vPk"/>
+                <constraint firstItem="BAr-VF-g5O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="7" id="lf2-Bt-FtI"/>
                 <constraint firstItem="Uq2-ue-f5B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lzF-DL-a4S"/>
                 <constraint firstItem="MpH-MW-oey" firstAttribute="centerX" secondItem="5MW-9h-Coc" secondAttribute="centerX" constant="1.5" id="oYw-TK-W4h"/>
                 <constraint firstItem="MpH-MW-oey" firstAttribute="centerY" secondItem="5MW-9h-Coc" secondAttribute="centerY" id="pZq-z1-SYS"/>

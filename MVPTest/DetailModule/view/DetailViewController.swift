@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDateLabel: UILabel!
     @IBOutlet weak var editButtView: UIView!
     @IBOutlet weak var editButtLabel: UIButton!
+    @IBOutlet weak var backroundImageView: UIImageView!
     
     var presenter: DetailViewPresenterProtocol!
     
@@ -26,6 +27,7 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.loadDataFromSQLiteDatabase()
+        
     }
     
     private func configureEditButt() {
@@ -42,5 +44,6 @@ extension DetailViewController: DetailViewProtocol {
     func setTask(task: Task?) {
         detailTaskLabel.text = task?.nameEvent
         detailDateLabel.text = "\(DateFormatter.created.string(from: task!.createdDateEvent ))"
+        
     }
 }

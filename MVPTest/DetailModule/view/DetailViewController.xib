@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="MVPTest" customModuleProvider="target">
             <connections>
+                <outlet property="backroundImageView" destination="dKT-Nv-q21" id="75V-LU-Xvp"/>
                 <outlet property="detailDateLabel" destination="uWs-l4-uKs" id="bQH-bw-ea3"/>
                 <outlet property="detailTaskLabel" destination="zHh-DZ-kV2" id="x9a-1o-M1l"/>
                 <outlet property="editButtLabel" destination="RFy-gE-2zF" id="GJD-Bh-fdA"/>

@@ -12,10 +12,11 @@ protocol AssamblyBuilderProtocol {
     func createEventModule(router: EventRouter, task: Task?) -> UIViewController
     func createDetailModule(task: Task, router: DetailRouter) -> UIViewController
     func createEditModule(task: Task, router: EditRouter) -> UIViewController
+//    func createImagePicker() -> UIViewController
 }
 
 class AssamblyModuleBuilder: AssamblyBuilderProtocol {
-
+    
     func createMainModule(router: MainRouter) -> UIViewController {
         let view = MainViewController()
         let presenter = MainPresenter(view: view, router: router)
@@ -47,3 +48,4 @@ class AssamblyModuleBuilder: AssamblyBuilderProtocol {
         return view
     }
 }
+
