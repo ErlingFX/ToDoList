@@ -37,7 +37,7 @@
 		3558905F26BAEB6B00CFBDA8 /* AssamblyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3558905E26BAEB6B00CFBDA8 /* AssamblyModuleBuilder.swift */; };
 		35AAA4EB26C153DF00AC195E /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AAA4EA26C153DF00AC195E /* SQLiteDatabase.swift */; };
 		35AAA50626C2784400AC195E /* SQLiteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AAA50526C2784400AC195E /* SQLiteCommands.swift */; };
-		3BB8837B26CD1E51008C7377 /* TaskFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB8837A26CD1E51008C7377 /* TaskFileManager.swift */; };
+		3BB8838026CD4747008C7377 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB8837F26CD4747008C7377 /* Image.swift */; };
 		8A1D83FB8F745ECB4F752E0A /* Pods_MVPTest_MVPTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDFFF80D00C2C5DF4F265D6 /* Pods_MVPTest_MVPTestUITests.framework */; };
 		E634E394DB375AFDB46E71FE /* Pods_MVPTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DF542C4C4130934C5126F0 /* Pods_MVPTestTests.framework */; };
 		FF6C55B915FEDF82A57F0239 /* Pods_MVPTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CB093E4C86F9C0C09A5BDA /* Pods_MVPTest.framework */; };
@@ -100,7 +100,7 @@
 		3558905E26BAEB6B00CFBDA8 /* AssamblyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssamblyModuleBuilder.swift; sourceTree = "<group>"; };
 		35AAA4EA26C153DF00AC195E /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		35AAA50526C2784400AC195E /* SQLiteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
-		3BB8837A26CD1E51008C7377 /* TaskFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFileManager.swift; sourceTree = "<group>"; };
+		3BB8837F26CD4747008C7377 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		6BDFFF80D00C2C5DF4F265D6 /* Pods_MVPTest_MVPTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPTest_MVPTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A925A3BA6E026BF1B66F43DE /* Pods-MVPTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTest.release.xcconfig"; path = "Target Support Files/Pods-MVPTest/Pods-MVPTest.release.xcconfig"; sourceTree = "<group>"; };
 		A9A0ADBCEEF2D7F0B0BBA510 /* Pods-MVPTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTestTests.debug.xcconfig"; path = "Target Support Files/Pods-MVPTestTests/Pods-MVPTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +263,7 @@
 				3558900B26BAE6F600CFBDA8 /* SceneDelegate.swift */,
 				3558900926BAE6F600CFBDA8 /* AppDelegate.swift */,
 				350FB9E426C528EF00EEC1FC /* Date.swift */,
+				3BB8837F26CD4747008C7377 /* Image.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -334,7 +335,6 @@
 				3517136226BD43EB00703299 /* Extension */,
 				3558901226BAE6F700CFBDA8 /* Assets.xcassets */,
 				3558901726BAE6F700CFBDA8 /* Info.plist */,
-				3BB8837A26CD1E51008C7377 /* TaskFileManager.swift */,
 			);
 			path = MVPTest;
 			sourceTree = "<group>";
@@ -660,11 +660,11 @@
 				3558904226BAE73500CFBDA8 /* MainPresenter.swift in Sources */,
 				35AAA50626C2784400AC195E /* SQLiteCommands.swift in Sources */,
 				351712FC26BC142E00703299 /* TaskCell.swift in Sources */,
-				3BB8837B26CD1E51008C7377 /* TaskFileManager.swift in Sources */,
 				3517138F26BD879600703299 /* MainRouter.swift in Sources */,
 				3558900E26BAE6F600CFBDA8 /* MainViewController.swift in Sources */,
 				351688A726C5553B0069C810 /* EditRouter.swift in Sources */,
 				350FB9E526C528EF00EEC1FC /* Date.swift in Sources */,
+				3BB8838026CD4747008C7377 /* Image.swift in Sources */,
 				3517131026BC20B400703299 /* DetailPresenter.swift in Sources */,
 				3516888D26C551A40069C810 /* EditViewController.swift in Sources */,
 				35AAA4EB26C153DF00AC195E /* SQLiteDatabase.swift in Sources */,

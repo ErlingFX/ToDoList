@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol DetailViewProtocol: class {
+protocol DetailViewProtocol {
     func setTask(task: Task?)
 }
 
-protocol DetailViewPresenterProtocol: class {
+protocol DetailViewPresenterProtocol {
     init(view: DetailViewProtocol, task: Task)
     func setTaskTest()
     func beginEditScreen()
@@ -22,7 +22,7 @@ class DetailPresenter: DetailViewPresenterProtocol {
     
     
     var router: DetailRouter?
-    weak var view: DetailViewProtocol?
+    var view: DetailViewProtocol?
     var task: Task
     
     required init(view: DetailViewProtocol, task: Task) {
@@ -31,7 +31,7 @@ class DetailPresenter: DetailViewPresenterProtocol {
     }
     
     public func setTaskTest() {
-        self.view?.setTask(task: task)
+        view?.setTask(task: task)
     }
     
    public func beginEditScreen() {

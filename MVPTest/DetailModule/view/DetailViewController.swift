@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var editButtView: UIView!
     @IBOutlet weak var editButtLabel: UIButton!
     @IBOutlet weak var backroundImageView: UIImageView!
+    @IBOutlet weak var detailImageLabel: UIImageView!
     
     var presenter: DetailViewPresenterProtocol!
     
@@ -22,6 +23,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         presenter.setTaskTest()
         configureEditButt()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +46,14 @@ extension DetailViewController: DetailViewProtocol {
     func setTask(task: Task?) {
         detailTaskLabel.text = task?.nameEvent
         detailDateLabel.text = "\(DateFormatter.created.string(from: task!.createdDateEvent ))"
+        //---- достаю ссылку
         
+        if  let url = URL(string: task?.image ?? "") {
+            let image = UIImage(contentsOfFile: url.path)
+            detailImageLabel.contentMode = .scaleToFill
+            detailImageLabel.image = image
+        }
     }
 }
+
+

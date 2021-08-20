@@ -16,7 +16,7 @@ class SQLiteCommands {
     static let id = Expression<Int64>("id")
     static var nameEvent = Expression<String>("nameEvent")
     static let createdDateEvent = Expression<Date>("createdDateEvent")
-    static let image = Expression<Data?>("image")
+    static let image = Expression<String?>("image")
     
     //MARK: - Создаю таблицу
     static func createTable() {
@@ -37,7 +37,7 @@ class SQLiteCommands {
         }
     }
     //MARK: - Вставляю строку
-    static func insertRow(_ contactValues: Task) -> Bool? {
+    static func insertRow(_ eventValues: Task) -> Bool? {
         guard let database = SQLiteDatabase.sharedInstance.dataBase else {
             print("Datastore connection error")
             return nil
@@ -46,9 +46,9 @@ class SQLiteCommands {
             // не хватает image
             let rowId = try database.run(
                 table.insert(
-                    nameEvent <- contactValues.nameEvent,
-                    createdDateEvent <- contactValues.createdDateEvent,
-                    image <- contactValues.image
+                    nameEvent <- eventValues.nameEvent,
+                    createdDateEvent <- eventValues.createdDateEvent,
+                    image <- eventValues.image
                 )
             )
             return true
@@ -60,7 +60,7 @@ class SQLiteCommands {
             return false
         }
     }
-    //MARK: - Present Rows (Настоящие строки?)
+    //MARK: - Present Rows (запрос всех данных)
     static func presentRows() -> [Task]? {
         guard let database = SQLiteDatabase.sharedInstance.dataBase  else {
             print("Datastore connection error")
@@ -84,7 +84,7 @@ class SQLiteCommands {
                 //MARK: - Add object to an array - (Добавить объект в массив)
                 taskArray.append(taskObject)
                 // image: \(task[image])
-                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent]), image: \(task[image])")
+                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent]), image: \(String(describing: task[image])))")
             }
         } catch {
             print("Present row error: \(error)")
@@ -103,9 +103,16 @@ class SQLiteCommands {
         return false
     }
     //MARK: - Изменяю ячейку
-    static func updateRow(idTask: Int64, newTask: String){
+    static func updateRow(task: Task) {
         do {
-            try SQLiteDatabase.sharedInstance.dataBase?.execute("UPDATE tasks SET nameEvent = '\(newTask)' WHERE id = \(idTask)")
+            guard let idTask = task.id else { return }
+            let stringId = String(describing: idTask)
+            if let image = task.image {
+                try SQLiteDatabase.sharedInstance.dataBase?.execute("UPDATE tasks SET nameEvent = '\(task.nameEvent)', image = '\(image)' WHERE id = \(stringId)")
+            } else {
+                print("не изменяет image")
+                try SQLiteDatabase.sharedInstance.dataBase?.execute("UPDATE tasks SET nameEvent = '\(task.nameEvent)'  WHERE id = \(stringId)")
+            }
             print("update NameEvent")
         } catch {
             print(error)
@@ -113,7 +120,7 @@ class SQLiteCommands {
         }
     }
     
-    //MARK: - обновляю данные
+    //MARK: - получаю ячейку , один объект по id
     static func obtainTask(task: Task) -> Task? {
         guard let database = SQLiteDatabase.sharedInstance.dataBase  else {
             print("Datastore connection error")
@@ -131,7 +138,7 @@ class SQLiteCommands {
                 let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue, image: imageValue)
                 taskArray.append(taskObject)
                 // image: \(task[image])
-                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent]), image: \(task[image])")
+                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent]), image: \(String(describing: task[image])))")
             }
         } catch {
             print("Present row error: \(error)")

@@ -14,9 +14,11 @@ protocol MainEditRouter {
 
 protocol EditRouterProtocol: MainEditRouter {
     func pop()
+    func presentVCpicker()
 }
 
 class EditRouter: EditRouterProtocol {
+    
     var navigationController: UINavigationController
     var assamblyBuilder: AssamblyBuilderProtocol?
     
@@ -26,5 +28,9 @@ class EditRouter: EditRouterProtocol {
     
     func pop() {
         navigationController.popViewController(animated: true)
+    }
+    
+    func presentVCpicker() {
+        navigationController.present(navigationController, animated: true, completion: nil)
     }
 }

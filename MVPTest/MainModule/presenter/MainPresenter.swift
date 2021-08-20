@@ -7,19 +7,17 @@
 
 import Foundation
 
-protocol MainViewProtocol: class {
+protocol MainViewProtocol: AnyObject {
    func reloadData()
 }
 
-protocol MainViewPresenterProtocol: class {
+protocol MainViewPresenterProtocol: AnyObject {
     var dataSource: [Task] { get set }
     func didTapPlusButton()
     func beginDetail(task: Task)
     func connectToDatabase()
     func loadDataFromSQLiteDatabase()
     func deleteRowFromSQLiteDatabase(task: Task)
-    //не дописал 2 метода роу ин секшн и селл фор роу ат
-    //
     init(view: MainViewProtocol, router: MainRouterProtocol)
 }
 
@@ -52,12 +50,8 @@ class MainPresenter: MainViewPresenterProtocol {
     }
     
     func deleteRowFromSQLiteDatabase(task: Task) {
-        
         SQLiteCommands.deleteRow(idTask: task.id ?? 0)
         dataSource = SQLiteCommands.presentRows() ?? []
         view?.reloadData()
-        //обновить датасурс
     }
-    
-    
 }

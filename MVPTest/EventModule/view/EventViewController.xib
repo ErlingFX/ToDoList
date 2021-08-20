@@ -40,8 +40,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FV-8e-or3">
-                    <rect key="frame" x="125" y="193" width="165" height="46"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FV-8e-or3">
+                    <rect key="frame" x="125" y="193" width="164" height="46"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="m4o-mq-c0T"/>
                     </constraints>

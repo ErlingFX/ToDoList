@@ -11,7 +11,7 @@ class TaskCell: UITableViewCell {
     
     @IBOutlet weak var todoEventLabel: UILabel!
     @IBOutlet weak var todoDateLabel: UILabel!
-    
+     
     
     func configureCell(_ task: Task) {
         let currentDateTime = Date()
@@ -21,5 +21,6 @@ class TaskCell: UITableViewCell {
         let dateTimeString = formatter.string(from: currentDateTime)
         todoEventLabel.text = task.nameEvent
         todoDateLabel.text = "от: " + dateTimeString
+
     }
 }

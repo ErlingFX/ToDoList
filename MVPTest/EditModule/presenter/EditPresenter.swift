@@ -16,6 +16,7 @@ protocol EditViewPresenterProtocol {
     func transferDataTest()
     func updateRowFromSQLiteDatabase(task: Task)
     func createNewTask(_ eventValues:Task)
+    func updateImage(image: String)
     init(view: EditViewProtocol, task: Task)
 }
 
@@ -35,17 +36,24 @@ class EditPresenter: EditViewPresenterProtocol {
     }
     
     func updateRowFromSQLiteDatabase(task: Task) {
-        //        SQLiteCommands.deleteRow(idTask: task.id ?? 0)
-        //        dataSource = SQLiteCommands.presentRows() ?? []
-        //        view?.reloadData()
-        
-        SQLiteCommands.updateRow(idTask: task.id ?? 0, newTask: task.nameEvent )
+        SQLiteCommands.updateRow(task: task)
         dataSource = SQLiteCommands.presentRows() ?? []
     }
+    
     func createNewTask(_ eventValues:Task) {
         guard SQLiteCommands.insertRow(eventValues) != nil else {
             print("error")
             return
         }
+    }
+    
+    func updateImage(image: String) {
+        guard let task = SQLiteCommands.obtainTask(task: task)  else {
+            print("image error")
+            return
+        }
+        self.task = task
+        self.task.image = image
+        SQLiteCommands.updateRow(task: self.task)
     }
 }
