@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,41 +11,37 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="hUh-T9-bPD" customClass="TaskCell" customModule="MVPTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="301" height="140"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSG-s5-0gp">
-                    <rect key="frame" x="10" y="10" width="151" height="79"/>
-                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSG-s5-0gp">
+                    <rect key="frame" x="5" y="5" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P44-we-Sok">
-                    <rect key="frame" x="169" y="93" width="116" height="27"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P44-we-Sok">
+                    <rect key="frame" x="195" y="95" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6v-dc-OWv">
-                    <rect key="frame" x="0.0" y="0.0" width="301" height="140"/>
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                     <color key="backgroundColor" red="0.081977717578411102" green="0.34894928336143494" blue="0.35619786381721497" alpha="0.25242544009985513" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="FlB-Iz-Ia3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="trailing" secondItem="RSG-s5-0gp" secondAttribute="trailing" constant="140" id="HT0-jP-WUE"/>
-                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="RSG-s5-0gp" secondAttribute="bottom" constant="51" id="KP8-Pr-fq9"/>
-                <constraint firstItem="P44-we-Sok" firstAttribute="trailing" secondItem="hUh-T9-bPD" secondAttribute="trailingMargin" id="RSg-VF-D73"/>
-                <constraint firstItem="RSG-s5-0gp" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" constant="10" id="TBc-Yr-Sfr"/>
-                <constraint firstItem="P44-we-Sok" firstAttribute="top" secondItem="FlB-Iz-Ia3" secondAttribute="top" constant="49" id="cci-Hu-3e4"/>
-                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="P44-we-Sok" secondAttribute="bottom" constant="20" id="ciB-Ar-Ebn"/>
-                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="trailing" secondItem="D6v-dc-OWv" secondAttribute="trailing" id="elw-kp-nxp"/>
-                <constraint firstItem="D6v-dc-OWv" firstAttribute="top" secondItem="hUh-T9-bPD" secondAttribute="top" id="n6F-Cp-83n"/>
-                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="D6v-dc-OWv" secondAttribute="bottom" id="qCY-zz-teb"/>
-                <constraint firstItem="P44-we-Sok" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" constant="169" id="rfH-w1-Wr0"/>
-                <constraint firstItem="D6v-dc-OWv" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" id="xWD-Zc-YWA"/>
-                <constraint firstItem="RSG-s5-0gp" firstAttribute="top" secondItem="hUh-T9-bPD" secondAttribute="top" constant="10" id="xpz-0U-WHP"/>
+                <constraint firstItem="RSG-s5-0gp" firstAttribute="top" secondItem="FlB-Iz-Ia3" secondAttribute="top" constant="5" id="3aH-3H-XLa"/>
+                <constraint firstItem="RSG-s5-0gp" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" constant="5" id="5V0-LW-Xvz"/>
+                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="P44-we-Sok" secondAttribute="bottom" constant="5" id="GGQ-a0-MXW"/>
+                <constraint firstItem="D6v-dc-OWv" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" id="GWL-uk-ax3"/>
+                <constraint firstItem="D6v-dc-OWv" firstAttribute="top" secondItem="FlB-Iz-Ia3" secondAttribute="top" id="dCn-N2-INP"/>
+                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="trailing" secondItem="D6v-dc-OWv" secondAttribute="trailing" id="wdD-2f-sX0"/>
+                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="trailing" secondItem="P44-we-Sok" secondAttribute="trailing" constant="5" id="xk3-VF-qFY"/>
+                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="D6v-dc-OWv" secondAttribute="bottom" id="yqN-cM-wgD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

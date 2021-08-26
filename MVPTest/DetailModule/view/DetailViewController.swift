@@ -29,6 +29,8 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.loadDataFromSQLiteDatabase()
+//        detailTaskLabel.center.x -= view.bounds.width
+//        detailImageLabel.layer.cornerRadius = 150
         
     }
     

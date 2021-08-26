@@ -138,7 +138,7 @@ class SQLiteCommands {
                 let taskObject = Task(id: idValue, nameEvent: nameIventValue, createdDateEvent: dataEventValue, image: imageValue)
                 taskArray.append(taskObject)
                 // image: \(task[image])
-                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent]), image: \(String(describing: task[image])))")
+                print("id: \(task[id]), nameEvent: \(task[nameEvent]), dateEvent: \(task[createdDateEvent]), image: \(task[image])")
             }
         } catch {
             print("Present row error: \(error)")

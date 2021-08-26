@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DetailViewProtocol {
+protocol DetailViewProtocol: AnyObject {
     func setTask(task: Task?)
 }
 
@@ -19,10 +19,8 @@ protocol DetailViewPresenterProtocol {
 }
 
 class DetailPresenter: DetailViewPresenterProtocol {
-    
-    
     var router: DetailRouter?
-    var view: DetailViewProtocol?
+    weak var view: DetailViewProtocol?
     var task: Task
     
     required init(view: DetailViewProtocol, task: Task) {
