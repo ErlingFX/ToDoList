@@ -19,7 +19,6 @@ class EditViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var editButtonLabel: UIButton!
     @IBOutlet weak var addImageLabel: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.transferDataTest()
@@ -90,7 +89,7 @@ extension EditViewController: UIImagePickerControllerDelegate & UINavigationCont
         animation.toValue = NSValue(cgPoint: CGPoint(x: editTextFiled.center.x + 10, y: editTextFiled.center.y))
         editTextFiled.layer.add(animation, forKey: "position")
         editTextFiled.placeholder = "not input text"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
             self.editTextFiled.placeholder = "enter your task"
         }
     }

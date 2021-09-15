@@ -47,7 +47,7 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your task" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwb-q6-ovN">
                     <rect key="frame" x="57" y="431" width="300" height="44.5"/>
-                    <color key="backgroundColor" red="0.75162577460827273" green="0.81865981106621732" blue="0.85882353779999998" alpha="0.65675488945578231" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.75162577460827273" green="0.81865981106621732" blue="0.85882353779999998" alpha="0.20036139455782312" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="5iu-Fy-zFZ"/>
                     </constraints>

@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     
     var presenter: MainViewPresenterProtocol!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -52,7 +53,6 @@ extension MainViewController: UITableViewDataSource {
             cell.layer.borderWidth = 2
             let model = presenter.dataSource[indexPath.row]
             cell.configureCell(model)
-            
             return cell
         }
         return UITableViewCell()
@@ -90,4 +90,5 @@ extension MainViewController: MainViewProtocol {
         maintableView.reloadData()
     }
 }
+
 
