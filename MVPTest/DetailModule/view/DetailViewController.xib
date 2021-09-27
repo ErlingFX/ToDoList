@@ -55,40 +55,43 @@
                         <constraint firstItem="76D-iU-xnq" firstAttribute="leading" secondItem="Dpy-HS-RTt" secondAttribute="leading" constant="58.5" id="Kho-Zq-GDz"/>
                     </constraints>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBz-ES-3Zt">
-                    <rect key="frame" x="325" y="794" width="67" height="68"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zWN-RR-gsf">
+                    <rect key="frame" x="327" y="784" width="67" height="68"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-gE-2zF">
-                            <rect key="frame" x="11" y="6" width="45" height="56"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                            <state key="normal" title="edit"/>
-                            <connections>
-                                <action selector="editButtAction:" destination="-1" eventType="touchUpInside" id="4Sk-hF-9fQ"/>
-                            </connections>
-                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBz-ES-3Zt">
+                            <rect key="frame" x="0.0" y="0.0" width="67" height="68"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-gE-2zF">
+                                    <rect key="frame" x="11" y="6" width="45" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                    <state key="normal" title="edit"/>
+                                    <connections>
+                                        <action selector="editButtAction:" destination="-1" eventType="touchUpInside" id="4Sk-hF-9fQ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="67" id="Fpo-iu-add"/>
+                                <constraint firstAttribute="height" constant="68" id="OEy-fz-cjL"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstItem="RFy-gE-2zF" firstAttribute="top" secondItem="TBz-ES-3Zt" secondAttribute="top" constant="6" id="3bD-0G-0rL"/>
-                        <constraint firstItem="RFy-gE-2zF" firstAttribute="leading" secondItem="TBz-ES-3Zt" secondAttribute="leading" constant="11" id="EMp-IW-Sps"/>
-                        <constraint firstItem="RFy-gE-2zF" firstAttribute="centerX" secondItem="TBz-ES-3Zt" secondAttribute="centerX" id="EbY-SJ-MQW"/>
-                        <constraint firstItem="RFy-gE-2zF" firstAttribute="centerY" secondItem="TBz-ES-3Zt" secondAttribute="centerY" id="MUQ-Tv-5wC"/>
-                    </constraints>
-                </view>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="TBz-ES-3Zt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="794" id="7lH-JI-PZs"/>
                 <constraint firstItem="dKT-Nv-q21" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8eV-tj-MGz"/>
                 <constraint firstItem="Dpy-HS-RTt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kva-NS-zUX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zWN-RR-gsf" secondAttribute="trailing" constant="20" id="TIx-hz-Qed"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dpy-HS-RTt" secondAttribute="trailing" id="VXX-8F-fWs"/>
                 <constraint firstAttribute="bottom" secondItem="dKT-Nv-q21" secondAttribute="bottom" id="XWE-1A-Lfe"/>
                 <constraint firstItem="Dpy-HS-RTt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="Yi4-73-d0g"/>
-                <constraint firstItem="TBz-ES-3Zt" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="pZ2-jM-nnc"/>
+                <constraint firstItem="zWN-RR-gsf" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-10" id="gGc-MI-6C3"/>
                 <constraint firstItem="dKT-Nv-q21" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qGm-Sd-Pzc"/>
                 <constraint firstItem="dKT-Nv-q21" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qJs-68-24i"/>
-                <constraint firstItem="TBz-ES-3Zt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="325" id="y8d-gd-4GI"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="76.339285714285708"/>
         </view>

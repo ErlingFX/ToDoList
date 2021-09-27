@@ -14,18 +14,28 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSG-s5-0gp">
-                    <rect key="frame" x="5" y="5" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="32"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P44-we-Sok">
-                    <rect key="frame" x="195" y="95" width="0.0" height="0.0"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nZk-bw-XdT">
+                    <rect key="frame" x="5" y="5" width="50" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSG-s5-0gp">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="32"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mib-PN-sx4">
+                    <rect key="frame" x="161" y="74.666666666666671" width="34" height="20.333333333333329"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P44-we-Sok">
+                            <rect key="frame" x="0.0" y="0.0" width="34" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6v-dc-OWv">
                     <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                     <color key="backgroundColor" red="0.081977717578411102" green="0.34894928336143494" blue="0.35619786381721497" alpha="0.25242544009985513" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,13 +44,13 @@
             <viewLayoutGuide key="safeArea" id="FlB-Iz-Ia3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="RSG-s5-0gp" firstAttribute="top" secondItem="FlB-Iz-Ia3" secondAttribute="top" constant="5" id="3aH-3H-XLa"/>
-                <constraint firstItem="RSG-s5-0gp" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" constant="5" id="5V0-LW-Xvz"/>
-                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="P44-we-Sok" secondAttribute="bottom" constant="5" id="GGQ-a0-MXW"/>
                 <constraint firstItem="D6v-dc-OWv" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" id="GWL-uk-ax3"/>
                 <constraint firstItem="D6v-dc-OWv" firstAttribute="top" secondItem="FlB-Iz-Ia3" secondAttribute="top" id="dCn-N2-INP"/>
+                <constraint firstItem="nZk-bw-XdT" firstAttribute="leading" secondItem="FlB-Iz-Ia3" secondAttribute="leading" constant="5" id="fgn-U6-qFI"/>
+                <constraint firstItem="nZk-bw-XdT" firstAttribute="top" secondItem="FlB-Iz-Ia3" secondAttribute="top" constant="5" id="vg9-3q-D7Q"/>
+                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="trailing" secondItem="mib-PN-sx4" secondAttribute="trailing" constant="5" id="vnM-oD-oYD"/>
+                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="mib-PN-sx4" secondAttribute="bottom" constant="5" id="wEe-s8-hgN"/>
                 <constraint firstItem="FlB-Iz-Ia3" firstAttribute="trailing" secondItem="D6v-dc-OWv" secondAttribute="trailing" id="wdD-2f-sX0"/>
-                <constraint firstItem="FlB-Iz-Ia3" firstAttribute="trailing" secondItem="P44-we-Sok" secondAttribute="trailing" constant="5" id="xk3-VF-qFY"/>
                 <constraint firstItem="FlB-Iz-Ia3" firstAttribute="bottom" secondItem="D6v-dc-OWv" secondAttribute="bottom" id="yqN-cM-wgD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -48,7 +58,7 @@
                 <outlet property="todoDateLabel" destination="P44-we-Sok" id="f9l-Di-Xpf"/>
                 <outlet property="todoEventLabel" destination="RSG-s5-0gp" id="qJc-oz-0T1"/>
             </connections>
-            <point key="canvasLocation" x="-550" y="-18.080357142857142"/>
+            <point key="canvasLocation" x="-550.72463768115949" y="-18.75"/>
         </view>
     </objects>
     <resources>

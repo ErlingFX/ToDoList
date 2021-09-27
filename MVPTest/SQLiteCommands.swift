@@ -12,7 +12,7 @@ class SQLiteCommands {
     
     static var table = Table("tasks")
     
-    //Выражения
+    //Поля
     static let id = Expression<Int64>("id")
     static var nameEvent = Expression<String>("nameEvent")
     static let createdDateEvent = Expression<Date>("createdDateEvent")
